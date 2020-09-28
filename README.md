@@ -23,7 +23,7 @@ Build the application in a responsive way, so it will adapt to different phone s
 
 ### Part 1: Building the supplied UI based on the designs
 
-Please see [] for the designs to build. We provided a sample [JSON file](sample-hotel-data.json) that you can use to render the room cards.
+Please see the following screenshots for the designs to build. We provided a sample [JSON file](sample-hotel-data.json) that you can use to render the room cards.
 
 Room Selection Screen | Room Basket Overlay
 -|-
@@ -32,7 +32,7 @@ Room Selection Screen | Room Basket Overlay
 
 ### Part 2: Implementing business logic
 
-In the supplied design [] you see there are two pieces of business logic to implement. The first is filtering of rooms based on  their properties. You can implement this filtering completely on the client side.
+In the supplied designs you see there are two pieces of business logic to implement. The first is filtering of rooms based on their properties. You can implement this filtering completely on the client side.
 
 The other logic you're required to build is the "room basket" concept. Please keep the following requirements in mind:
 
@@ -44,8 +44,9 @@ It is recommended to write automated tests (unit or integration) to verify and d
 
 ### Bonus points
 
+* Build a swipeable image gallery in the hotel card.
 * Prepare your application to work with different languages (i18n).
-* A scaled up version for tablets / desktops (there is no design supplied so you'll need to use your imagination).
+* Implement a scaled up version for tablet / desktop devices. Note there is no design supplied, so you'll need to use your imagination if you go this route.
 
 ## The sample project
 
