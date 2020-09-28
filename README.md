@@ -25,29 +25,27 @@ Build the application in a responsive way, so it will adapt to different phone s
 
 Please see [] for the designs to build. We provided a sample [JSON file](sample-hotel-data.json) that you can use to render the room cards.
 
-#### Room Selection Screen
-![Room Selection](1-room-selection.png "Room Selection Screen")
-
-#### Room Basket Overlay
-![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay")
+Room Selection Screen | Room Basket Overlay
+-|-
+![Room Selection](1-room-selection.png "Room Selection Screen") | ![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay")
 
 
 ### Part 2: Implementing business logic
 
-In the supplied design [] you see there are two pieces of business logic to implement. The first is filtering of rooms based on  their properties. You can implement this filterig completely on the client side.
+In the supplied design [] you see there are two pieces of business logic to implement. The first is filtering of rooms based on  their properties. You can implement this filtering completely on the client side.
 
 The other logic you're required to build is the "room basket" concept. Please keep the following requirements in mind:
+
 * The user can add maximum of 5 rooms of a type to a basket
 * In the basket view, when removing the last of a room type, it should remove the room from the basket.
-* The room should keep state to show whether it is in a basket or not. Clicking the checkmark of an already selected room should remove it from the basket.
+* The room should keep state to show whether it is in a basket or not. Clicking the check mark of an already selected room should remove it from the basket.
 
 It is recommended to write automated tests (unit or integration) to verify and document the business logic.
 
-
 ### Bonus points
+
 * Prepare your application to work with different languages (i18n).
 * A scaled up version for tablets / desktops (there is no design supplied so you'll need to use your imagination).
-
 
 ## The sample project
 
