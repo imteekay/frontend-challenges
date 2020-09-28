@@ -6,6 +6,10 @@ This coding challenge will serve as the first step in the hiring process, the go
 
 There are two parts to the challenge, the first is developing the visual components of a supplied design. The second part is about how you implement, test and explain business logic.
 
+## Time to spend on the assignment
+
+We don't assign a fixed time deadline for it, but after you’ve read the assignment, please let us know when you’re planning to complete it. We usually suggest spending between 3-4 hours on the assignment. After you complete the assignment we'll review it internally and if we evaluate it to be positive, we'll schedule a technical interview to discuss the results together. As said, feel free to make some concessions under time pressure, just let us know what parts you've focused on most.
+
 ## Technology and Frameworks
 
 This project is based on React as that is what we use here at FindHotel, however this is not a hard requirement. If you prefer to use another technology, feel free to set up the assignment with your tools of choice.
