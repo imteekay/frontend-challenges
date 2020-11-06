@@ -34,6 +34,11 @@ Room Selection Screen | Room Basket Overlay
 ![Room Selection](1-room-selection.png "Room Selection Screen") | ![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay")
 
 
+#### Provided sample data
+A note about the data set provided: feel free to use random images for the hotels, there's no need to include the images from the design (you can download a few from our website if you like).
+
+Some hotel objects contain `meals` (free breakfast), `cancellationPolicy` and `cug` properties. The latter specifies the deal type such as `private` or `negotiation`. The `rateBreakdown` contains split data on prices for the hotels, you can decide to show prices including or excluding taxes based on your preference.
+
 ### Part 2: Implementing business logic
 
 In the supplied designs you see there are two pieces of business logic to implement. The first is filtering of rooms based on their properties. You can implement this filtering completely on the client side.
