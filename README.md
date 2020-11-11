@@ -29,6 +29,9 @@ Build the application in a responsive way, so it will adapt to different phone s
 
 Please see the following screenshots for the designs to build. We provided a sample [JSON file](sample-hotel-data.json) that you can use to render the room cards.
 
+The [Zeplin Project](https://zpl.io/2yN6mZo) can help you with the visual implementation, please request access from the recruiter if you don't have access yet.
+
+
 Room Selection Screen | Room Basket Overlay
 -|-
 ![Room Selection](1-room-selection.png "Room Selection Screen") | ![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay")
