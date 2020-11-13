@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="47px" height="58px" viewBox="0 0 47 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>molecules/room filter/00. defaultwifi</title>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="_linked/03.-hotel---subpage---all-deals" transform="translate(-12.000000, -92.000000)">
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/wifi</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03.-hotel---subpage---all-deals" transform="translate(-16.000000, -92.000000)">
             <g id="filters" transform="translate(0.000000, 64.000000)">
                 <g id="molecules/room-filter/00.-default" transform="translate(12.500000, 28.000000)">
-                    <text id="Free-WiFi" font-family="Helvetica" font-size="10" font-weight="normal" line-spacing="20" fill="#0077FF">
-                        <tspan x="1.33496094" y="48">Free WiFi</tspan>
-                    </text>
-                    <circle id="atoms/buttons/filter-buttons/00.-default" stroke="#BED2E9" fill="#FEFEFF" fill-rule="nonzero" cx="23.5" cy="20" r="19.5"></circle>
-                    <g id="atoms/icons/filters/wifi" transform="translate(13.775457, 13.000000)">
-                        <path d="M19.5135164,4.18469979 C19.1572065,3.82579224 18.7846061,3.48621405 18.3970803,3.16747028 C15.9781077,1.17784172 12.9775853,-2.20268248e-13 9.72753787,-2.20268248e-13 C6.47529122,-2.20268248e-13 3.47290747,1.17943627 1.05308573,3.17151034 C0.688449684,3.4716903 0.337041655,3.79032252 -2.84217094e-14,4.12615196" id="Shape" stroke="#0077FF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M16.61664,6.96015167 C16.3743895,6.7177371 16.122307,6.48788762 15.8611673,6.27149081 C14.1365703,4.84238065 12.0169541,4 9.72554417,4 C7.40387733,4 5.25857111,4.86477393 3.52181091,6.32840911 C3.28981029,6.52392502 3.06509987,6.73012718 2.84823311,6.94638172" id="Shape" stroke="#0077FF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M13.8351721,9.84493835 C13.6651015,9.66908448 13.4876261,9.50393092 13.3034135,9.35030816 C12.2807531,8.49746764 11.050459,8 9.72676035,8 C8.3594796,8 7.09185515,8.53076466 6.04977472,9.43569685 C5.90772883,9.55904808 5.76987363,9.68935149 5.63652796,9.82621047" id="Shape" stroke="#0077FF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <circle id="Oval" fill="#0077FF" cx="9.72454298" cy="13" r="2"></circle>
+                    <g id="icon/wifi" transform="translate(3.500000, 0.000000)">
+                        <circle id="atoms/buttons/filter-buttons/00.-default" stroke="#BED2E9" fill="#FEFEFF" fill-rule="nonzero" cx="20" cy="20" r="19.5"></circle>
+                        <g id="atoms/icons/filters/wifi" transform="translate(10.275457, 13.000000)">
+                            <path d="M19.5135164,4.18469979 C19.1572065,3.82579224 18.7846061,3.48621405 18.3970803,3.16747028 C15.9781077,1.17784172 12.9775853,-2.20268248e-13 9.72753787,-2.20268248e-13 C6.47529122,-2.20268248e-13 3.47290747,1.17943627 1.05308573,3.17151034 C0.688449684,3.4716903 0.337041655,3.79032252 -2.84217094e-14,4.12615196" id="Shape" stroke="#0077FF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M16.61664,6.96015167 C16.3743895,6.7177371 16.122307,6.48788762 15.8611673,6.27149081 C14.1365703,4.84238065 12.0169541,4 9.72554417,4 C7.40387733,4 5.25857111,4.86477393 3.52181091,6.32840911 C3.28981029,6.52392502 3.06509987,6.73012718 2.84823311,6.94638172" id="Shape" stroke="#0077FF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M13.8351721,9.84493835 C13.6651015,9.66908448 13.4876261,9.50393092 13.3034135,9.35030816 C12.2807531,8.49746764 11.050459,8 9.72676035,8 C8.3594796,8 7.09185515,8.53076466 6.04977472,9.43569685 C5.90772883,9.55904808 5.76987363,9.68935149 5.63652796,9.82621047" id="Shape" stroke="#0077FF" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <circle id="Oval" fill="#0077FF" cx="9.72454298" cy="13" r="2"></circle>
+                        </g>
                     </g>
                 </g>
             </g>

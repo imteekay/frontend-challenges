@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon/breakfast</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03.-hotel---subpage---all-deals" transform="translate(-84.000000, -92.000000)" stroke-width="2">
+            <g id="filters" transform="translate(0.000000, 64.000000)">
+                <g id="molecules/room-filter/00.-default" transform="translate(81.000000, 28.000000)">
+                    <g id="icon/breakfast" transform="translate(3.000000, 0.000000)">
+                        <circle id="atoms/buttons/filter-buttons/02.-active-" stroke="#0077FF" fill="#4398FA" fill-rule="nonzero" cx="20" cy="20" r="19"></circle>
+                        <g id="icon" transform="translate(12.000000, 11.000000)" stroke="#FFFFFF">
+                            <path d="M14,7 L14,10.7666667 C14,12.0911028 13.4990261,13.3081908 12.6686643,14.2278853 C11.8383024,15.1475798 10.6785524,15.7698807 9.36100043,15.9047425 C8.74066695,15.9682385 8.12033394,16 7.5,16 C6.90382552,16 6.3076518,15.9706645 5.71148518,15.9120176 C4.40965401,15.783942 3.25850703,15.1851778 2.41999311,14.2942816 C1.5823069,13.4042649 1.05642963,12.2227608 1.00428811,10.9277137 L1.00428811,10.9277137 L1,7 L14,7 Z" id="Rectangle-5"></path>
+                            <path d="" id="Rectangle-5"></path>
+                            <path d="M14,8 C16,8 17,8.83333333 17,10.5 C17,12.1666667 16,13 14,13" id="Path-5"></path>
+                            <path d="M5,4 C10.3333333,3 11.3333333,1.66666667 8,0" id="Path-3" stroke-linecap="round" stroke-linejoin="round" transform="translate(7.461538, 2.000000) scale(-1, 1) translate(-7.461538, -2.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
