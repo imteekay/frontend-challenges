@@ -43,11 +43,11 @@ The rules for the output format are the following:
 - Adults and children are separated by colon ( : );
 - Children ages are separated by comma ( , ).
 
-Examples
-"1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children.
-"3" → One room with three adults and no children
-"2:4" → One room with two adults and one child aged four
-"1:0,13,16" → One room with one adult and three children (aged zero, thirteen and sixteen)
+##### Examples
+* "1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children.
+* "3" → One room with three adults and no children
+* "2:4" → One room with two adults and one child aged four
+* "1:0,13,16" → One room with one adult and three children (aged zero, thirteen and sixteen)
 
 Note: Keep in mind this is the serialized representation of a valid component state, you can keep a different intermediate data structure of your choice to manage internal state.
 
