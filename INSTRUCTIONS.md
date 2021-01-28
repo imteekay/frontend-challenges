@@ -77,12 +77,19 @@ It should be evident to the user how to operate the component. We are here to he
 It is recommended to write automated tests (unit or integration) to verify and document the business logic.
 We leave to you to decide which parts of the implementation should be covered by tests, given the constraint of time.
 
-### Judgment criteria
+### Evaluation criteria
 
-TODO: Describe how we evaluate the assignment and what we value.
+We will evaluate the assignment according to the following aspects:
+
+* Correctness, bug free implementation according to the requirements
+* Code quality, how clean, readable, organized and future proof your code is
+* Visual implementation, how close your component implementation is to the supplied designs
+* Quality assurance, how much confidence your automated tests add to the implementation
 
 ### Bonus points
 
 * Allow the input as props and emit a Redux action (or other state management framework of choice) as output
 * Exercise the component interactively with an appropriate test library
 * Use git best practices, commit messages and such
+
+Good luck! If you have any questions around the assignment, feel free to reach out :)
