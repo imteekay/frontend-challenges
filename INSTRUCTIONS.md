@@ -39,12 +39,12 @@ The component should receive its input from the user manipulating the UI or a in
 We use this to allow the Guests and Rooms configuration to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Update` button).
 
 The rules for the output format are the following:
-- Rooms are separated by pipe ( | );
-- Adults and children are separated by colon ( : );
-- Children ages are separated by comma ( , ).
+- Rooms are separated by pipe ( | )
+- Adults and children are separated by colon ( : )
+- Children ages are separated by comma ( , )
 
 ##### Examples
-* "1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children.
+* "1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children
 * "3" → One room with three adults and no children
 * "2:4" → One room with two adults and one child aged four
 * "1:0,13,16" → One room with one adult and three children (aged zero, thirteen and sixteen)
@@ -60,7 +60,7 @@ These are the requirements the component need to abide to be deemed functional.
 * Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
 * Each room has a maximum occupancy of five. This is, adults plus children per room
 * The Guest and Room selector should always yield a valid room occupancy
-* A user can either choose `Update` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this.
+* A user can either choose `Update` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this
 
 #### Non Functional requirements
 ##### Configurability
