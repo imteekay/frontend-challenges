@@ -26,7 +26,7 @@ Please note for this assignment you are not required to build any server side lo
 
 ### The Guest and Room Selector component
 
-Please see the following screenshots for the designs to build. You can focus on the Guest Picker, the home page is not required.
+Please see the following screenshots for the designs to build. You can focus on the Guest and Room Selector, **building the home page is not required**.
 
 | Home screen                     | Guest Picker overlay                                                    | Guest Picker with more rooms overlay                                                                       |
 |---------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
