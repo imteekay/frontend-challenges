@@ -28,9 +28,9 @@ Please note for this assignment you are not required to build any server side lo
 
 Please see the following screenshots for the designs to build. You can focus on the Guest and Room Selector, **building the home page is not required**.
 
-| Home screen                     | Guest Picker overlay                                                    | Guest Picker with more rooms overlay                                                                       |
+| Home screen                     | Guest and Room Overlay                                                    | Guest and Room Overlay with more rooms                                                                       |
 |---------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| ![Home](Home.jpg "Home screen") | ![Guest Picker Overlay](GuestPicker-Default.jpg "Guest Picker overlay") | ![Guest Picker with more rooms overlay](GuestPicker-More-Rooms.jpg "Guest Picker with more rooms overlay") |
+| ![Home](Home.jpg "Home screen") | ![Guest and Room Overlay](GuestPicker-Default.jpg "Guest and Room Overlay") | ![Guest and Room Overlay with more rooms](GuestPicker-More-Rooms.jpg "Guest and Room Overlay with more rooms") |
 
 ### Business requirements
 
