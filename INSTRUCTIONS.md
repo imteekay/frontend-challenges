@@ -35,7 +35,7 @@ Please see the following screenshots for the designs to build. You can focus on 
 ### Business requirements
 
 #### Input and output
-The component should receive its input from the user manipulating the UI or a initial state and emit its output as a serialized string.
+The component should receive its initial state as a string, allow the user to update the state via manipulating the UI, and emit its output as a serialized string.
 We use this to allow the Guests and Rooms configuration to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Search` button).
 
 The rules for the output format are the following:
