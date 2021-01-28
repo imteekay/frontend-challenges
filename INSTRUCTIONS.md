@@ -47,10 +47,10 @@ The rules for the output format are the following:
 - Children ages are separated by comma ( , ).
 
 Examples
-"1:4,6|3" → Two rooms, one with one adult and two children ages 4 and 6 and the other with 3 adults and no children.
-"3" → 3 adults and no children
-"2:4" → 2 adults and one child aged 4
-"1:0,13,16" → 1 adult and 3 children (aged 0, 13 and 16)
+"1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children.
+"3" → One room with three adults and no children
+"2:4" → One room with two adults and one child aged four
+"1:0,13,16" → One room with one adult and three children (aged zero, thirteen and sixteen)
 
 Note: Keep in mind this is the serialized representation of a valid component state, you can keep a different intermediate data structure of your choice to manage internal state.
 
@@ -63,7 +63,6 @@ These are the requirements the component need to abide to be deemed functional.
 * Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
 * Each room has a maximum occupancy of five. This is, adults plus children per room
 * The Guest and Room selector should always yield a valid room occupancy
-* Apply sensible defaults to the initial room occupation if the user is using the component for the first time
 * A user can either choose `Update` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this.
 
 #### Non Functional requirements
