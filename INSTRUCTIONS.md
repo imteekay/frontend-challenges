@@ -30,34 +30,52 @@ Please see the following screenshots for the designs to build.
 
 TODO: Add images
 
-Room Selection Screen | Room Basket Overlay
--|-
-![Room Selection](1-room-selection.png "Room Selection Screen") | ![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay")
+| Room Selection Screen                                           | Room Basket Overlay                                                     |
+| --------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| ![Room Selection](1-room-selection.png "Room Selection Screen") | ![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay") |
 
 
 ### Business requirements
 
 #### Input and output
-The component should receive its input and emit its output as a string. We use this to allow the Guest and Room selection to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Update` button).
+The component should receive its input from the user manipulating the UI or a initial state and emit its output as a serialized string. 
+We use this to allow the Guests and Rooms configuration to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Update` button).
 
-The format is as follows:
+The rules for the output format are the following:
+- Rooms are separated by pipe ( | );
+- Adults and children are separated by colon ( : );
+- Children ages are separated by comma ( , ).
 
-TODO: Describe serialization format
+Examples
+"1:4,6|3" → Two rooms, one with one adult and two children ages 4 and 6 and the other with 3 adults and no children.
+"3" → 3 adults and no children
+"2:4" → 2 adults and one child aged 4
+"1:0,13,16" → 1 adult and 3 children (aged 0, 13 and 16)
 
 Note: Keep in mind this is the serialized representation of a valid component state, you can keep a different intermediate data structure of your choice to manage internal state.
 
-#### Business logic:
-* Each room can have one or more adults, with a maximum of five
-* Each room can have zero or more children, with a maximum of three
+#### Functional requirements
+These are the requirements the component need to abide to be deemed functional.
+
+* Up to eight rooms can be added
+* Each room has at least one adult and up to a maximum of five
+* Each room has zero or more children up to a maximum of three
 * Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
-* Each room has a maximum occupancy of five, this is adults plus children per room
-* The Guest and Room selector should always yield a valid room occupancy, meaning at least one adult in one room
-* A maximum of eight rooms can be selected
+* Each room has a maximum occupancy of five. This is, adults plus children per room
+* The Guest and Room selector should always yield a valid room occupancy
+* Apply sensible defaults to the initial room occupation if the user is using the component for the first time
+* A user can either choose `Update` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this.
 
-Keep in mind that the user can either choose `Update` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this.
+#### Non Functional requirements
+##### Configurability
+The functional requirements can change in the future, what can you do to make sure the component is easiliy configurable
 
+##### Usability
+It should be evident to the user how to operate the component. We are here to help the user to understand what are their options and guide them.
+
+##### Testability
+We leave to you to decide which parts of the implementation should be covered by tests, given the constraint of time.
 It is recommended to write automated tests (unit or integration) to verify and document the business logic.
-
 
 ### Judgment criteria
 
