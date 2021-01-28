@@ -74,8 +74,8 @@ The functional requirements can change in the future, what can you do to make su
 It should be evident to the user how to operate the component. We are here to help the user to understand what are their options and guide them.
 
 ##### Testability
-We leave to you to decide which parts of the implementation should be covered by tests, given the constraint of time.
 It is recommended to write automated tests (unit or integration) to verify and document the business logic.
+We leave to you to decide which parts of the implementation should be covered by tests, given the constraint of time.
 
 ### Judgment criteria
 
