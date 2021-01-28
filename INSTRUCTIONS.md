@@ -26,19 +26,16 @@ Please note for this assignment you are not required to build any server side lo
 
 ### The Guest and Room Selector component
 
-Please see the following screenshots for the designs to build. 
+Please see the following screenshots for the designs to build. You can focus on the Guest Picker, the home page is not required.
 
-TODO: Add images
-
-| Room Selection Screen                                           | Room Basket Overlay                                                     |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| ![Room Selection](1-room-selection.png "Room Selection Screen") | ![Room Basket Overlay](2-room-basket-overlay.png "Room Basket Overlay") |
-
+| Home screen                     | Guest Picker overlay                                                    | Guest Picker with more rooms overlay                                                                       |
+|---------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| ![Home](Home.jpg "Home screen") | ![Guest Picker Overlay](GuestPicker-Default.jpg "Guest Picker overlay") | ![Guest Picker with more rooms overlay](GuestPicker-More-Rooms.jpg "Guest Picker with more rooms overlay") |
 
 ### Business requirements
 
 #### Input and output
-The component should receive its input from the user manipulating the UI or a initial state and emit its output as a serialized string. 
+The component should receive its input from the user manipulating the UI or a initial state and emit its output as a serialized string.
 We use this to allow the Guests and Rooms configuration to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Update` button).
 
 The rules for the output format are the following:
