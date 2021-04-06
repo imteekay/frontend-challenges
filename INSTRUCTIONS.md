@@ -8,7 +8,7 @@ There are two parts to the challenge, the first is developing the visual compone
 
 ## Time to spend on the assignment
 
-We don't assign a fixed time deadline for it, but after you’ve read the assignment, please let us know when you’re planning to complete it. After you complete the assignment we'll review it internally and if we evaluate it to be positive, we'll schedule a technical interview to discuss the results together. As said, feel free to make some concessions under time pressure, just let us know what parts you've focused on most.
+We don't assign a fixed time deadline for it, but after you’ve read the assignment, please let us know when you’re planning to complete it. After you complete the assignment we'll review it internally, and if we evaluate it to be positive, we'll schedule a technical interview to discuss the results together. As said, feel free to make some concessions under time pressure, just let us know what parts you've focused on most.
 
 ## Technology and Frameworks
 
@@ -60,32 +60,28 @@ These are the requirements the component need to abide to be deemed functional.
 * Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
 * Each room has a maximum occupancy of five. This is, adults plus children per room
 * The Guest and Room selector should always yield a valid room occupancy, use button disablement to avoid invalid configurations
-* A user can either choose `Search` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this
+* A user can either click `Search` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this
 
 #### Non Functional requirements
-##### Configurability
-The functional requirements can change in the future, do what you can to make sure the component is easiliy configurable.
-
 ##### Usability
 It should be evident to the user how to operate the component. We are here to help the user to understand what are their options and guide them.
 
+##### Configurability
+The exact functional requirements of the component can change in the future, aim to make the component configurable for things such as default values and max room occupancy.
+
 ##### Testability
 It is recommended to write automated tests (unit or integration) to verify and document the business logic.
-We leave to you to decide which parts of the implementation should be covered by tests, given the constraint of time.
+We leave it up to you to decide which parts of the implementation should be covered by automated tests given the time constraints.
 
 ### Evaluation criteria
+
+In general, treat us as your colleagues reviewing your solution, and - as much as you can within the time constraints - try to follow the practices you normally would for having your work reviewed by your peers.
 
 We will evaluate the assignment according to the following aspects:
 
 * Correctness, bug free implementation according to the requirements
 * Code quality, how clean, readable, organized and future proof your code is
-* Visual implementation, how close your component implementation is to the supplied designs
 * Quality assurance, how much confidence your automated tests add to the implementation
-
-### Bonus points
-
-* Allow the input as props and emit a Redux action (or other state management framework of choice) as output
-* Exercise the component interactively with an appropriate test library
-* Use git best practices, commit messages and such
+* Visual implementation, how close your component implementation is to the supplied designs
 
 Good luck! If you have any questions around the assignment, feel free to reach out :)
