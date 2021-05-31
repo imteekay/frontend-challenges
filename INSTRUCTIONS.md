@@ -36,7 +36,7 @@ Please see the following screenshots for the designs to build. You can focus on 
 
 #### Input and output
 The component should receive its initial state as a string, allow the user to update the state via manipulating the UI, and emit its output as a serialized string.
-We use this to allow the Guests and Rooms configuration to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Search` button).
+You should be able to pass the Guests and Rooms configuration in via the URL in this encoded manner. The URL should be updated with this serialized string when the component state is "comitted" (via the `Search` button) to allow for sharing.
 
 The rules for the output format are the following:
 - Rooms are separated by pipe `|`
