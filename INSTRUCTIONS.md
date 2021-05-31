@@ -36,7 +36,7 @@ Please see the following screenshots for the designs to build. You can focus on 
 
 #### Input and output
 The component should receive its initial state as a string, allow the user to update the state via manipulating the UI, and emit its output as a serialized string.
-We use this to allow the Guests and Rooms configuration to be passed in via the URL in an encoded manner, and update the URL for sharing with others after the component state is "comitted" (via the `Search` button).
+You should be able to pass the Guests and Rooms configuration in via the URL in this encoded manner. The URL should be updated with this serialized string when the component state is "comitted" (via the `Search` button) to allow for sharing.
 
 The rules for the output format are the following:
 - Rooms are separated by pipe `|`
@@ -60,7 +60,7 @@ These are the requirements the component need to abide to be deemed functional.
 * Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
 * Each room has a maximum occupancy of five. This is, adults plus children per room
 * The Guest and Room selector should always yield a valid room occupancy, use button disablement to avoid invalid configurations
-* A user can either click `Search` to commit the output, or click the `x` on top to reset the chosen room selection, revert back to the original state and emit this
+* A user can either click `Search` to commit the output to the URL, or click the `x` on top to reset the chosen room selection, revert back to the original state and output this to the URL.
 
 #### Non Functional requirements
 ##### Usability
