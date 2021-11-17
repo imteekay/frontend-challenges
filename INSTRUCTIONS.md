@@ -60,7 +60,7 @@ These are the requirements the component need to abide to be deemed functional.
 * Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
 * Each room has a maximum occupancy of five. This is, adults plus children per room
 * The Guest and Room selector should always yield a valid room occupancy, use button disablement to avoid invalid configurations
-* A user can either click `Search` to commit the output to the URL, or click the `x` on top to reset the chosen room selection, revert back to the original state and output this to the URL.
+* A user can either click `Search` to commit the output to the URL, or click the `x` on top to reset the chosen room selection and revert the UI back to the original state.
 
 #### Non Functional requirements
 ##### Usability
