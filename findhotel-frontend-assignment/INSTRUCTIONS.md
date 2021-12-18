@@ -28,48 +28,56 @@ Please note for this assignment you are not required to build any server side lo
 
 Please see the following screenshots for the designs to build. You can focus on the Guest and Room Selector, **building the home page is not required**.
 
-| Home screen                     | Guest and Room Overlay                                                    | Guest and Room Overlay with more rooms                                                                       |
-|---------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Home screen                     | Guest and Room Overlay                                                      | Guest and Room Overlay with more rooms                                                                         |
+| ------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | ![Home](Home.jpg "Home screen") | ![Guest and Room Overlay](GuestPicker-Default.jpg "Guest and Room Overlay") | ![Guest and Room Overlay with more rooms](GuestPicker-More-Rooms.jpg "Guest and Room Overlay with more rooms") |
 
 ### Business requirements
 
 #### Input and output
+
 The component should receive its initial state as a string, allow the user to update the state via manipulating the UI, and emit its output as a serialized string.
 You should be able to pass the Guests and Rooms configuration in via the URL in this encoded manner. The URL should be updated with this serialized string when the component state is "comitted" (via the `Search` button) to allow for sharing.
 
 The rules for the output format are the following:
+
 - Rooms are separated by pipe `|`
 - Adults and children are separated by colon `:`
 - Children ages are separated by comma `,`
 
 ##### Examples
-* "1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children
-* "3" → One room with three adults and no children
-* "2:4" → One room with two adults and one child aged four
-* "1:0,13,16" → One room with one adult and three children (aged zero, thirteen and sixteen)
+
+- "1:4,6|3" → Two rooms, one with one adult and two children ages four and six and the other with three adults and no children
+- "3" → One room with three adults and no children
+- "2:4" → One room with two adults and one child aged four
+- "1:0,13,16" → One room with one adult and three children (aged zero, thirteen and sixteen)
 
 Note: Keep in mind this is the serialized representation of a valid component state, you can keep a different intermediate data structure of your choice to manage internal state.
 
 #### Functional requirements
+
 These are the requirements the component need to abide to be deemed functional.
 
-* Up to eight rooms can be added
-* Each room has at least one adult and up to a maximum of five
-* Each room has zero or more children up to a maximum of three
-* Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
-* Each room has a maximum occupancy of five. This is, adults plus children per room
-* The Guest and Room selector should always yield a valid room occupancy, use button disablement to avoid invalid configurations
-* A user can either click `Search` to commit the output to the URL, or click the `x` on top to reset the chosen room selection and revert the UI back to the original state.
+- Up to eight rooms can be added
+- Each room has at least one adult and up to a maximum of five
+- Each room has zero or more children up to a maximum of three
+- Each child needs to have their age supplied, so we know what kind of bed or cot to provide and what to charge for the room
+- Each room has a maximum occupancy of five. This is, adults plus children per room
+- The Guest and Room selector should always yield a valid room occupancy, use button disablement to avoid invalid configurations
+- A user can either click `Search` to commit the output to the URL, or click the `x` on top to reset the chosen room selection and revert the UI back to the original state.
 
 #### Non Functional requirements
+
 ##### Usability
+
 It should be evident to the user how to operate the component. We are here to help the user to understand what are their options and guide them.
 
 ##### Configurability
+
 The exact functional requirements of the component can change in the future, aim to make the component configurable for things such as default values and max room occupancy.
 
 ##### Testability
+
 It is recommended to write automated tests (unit or integration) to verify and document the business logic.
 We leave it up to you to decide which parts of the implementation should be covered by automated tests given the time constraints.
 
@@ -79,9 +87,9 @@ In general, treat us as your colleagues reviewing your solution, and - as much a
 
 We will evaluate the assignment according to the following aspects:
 
-* Correctness, bug free implementation according to the requirements
-* Code quality, how clean, readable, organized and future proof your code is
-* Quality assurance, how much confidence your automated tests add to the implementation
-* Visual implementation, how close your component implementation is to the supplied designs
+- Correctness, bug free implementation according to the requirements
+- Code quality, how clean, readable, organized and future proof your code is
+- Quality assurance, how much confidence your automated tests add to the implementation
+- Visual implementation, how close your component implementation is to the supplied designs
 
 Good luck! If you have any questions around the assignment, feel free to reach out :)
