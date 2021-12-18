@@ -14,13 +14,12 @@ function parseChildren(children: string) {
     .map((age: string) => ({ age: Number(age) }));
 }
 
-function toGuestRooms(
+function parseGuestRooms(
   guestRooms: GuestRooms,
   room: string,
   roomNumber: number
 ) {
   const [adultsCount, childrenString] = room.split(ADULT_CHILDREN_SEPARATOR);
-
   const children = childrenString ? parseChildren(childrenString) : [];
   const roomTitle = getRoomTitle(roomNumber);
 
@@ -32,9 +31,9 @@ function toGuestRooms(
   return guestRooms;
 }
 
-export function parseGuestRooms(guestRooms: string) {
+export function toGuestRooms(guestRooms: string) {
   const rooms = guestRooms.split(ROOM_SEPARATOR);
   const guestRoomsInitialValue = { rooms: {} };
 
-  return rooms.reduce<GuestRooms>(toGuestRooms, guestRoomsInitialValue);
+  return rooms.reduce<GuestRooms>(parseGuestRooms, guestRoomsInitialValue);
 }
