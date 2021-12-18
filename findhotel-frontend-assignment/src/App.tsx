@@ -1,12 +1,13 @@
-import React from 'react';
-import Hello from './components/Hello';
+import React, { useState } from 'react';
+import { NumberInput } from './components/NumberInput';
 import './App.css';
 
 function App() {
+  const [numberValue, setNumberValue] = useState(0);
+
   return (
     <div className="App">
-      <Hello />
-      Your code here :)
+      <NumberInput value={numberValue} updateValue={setNumberValue} />
     </div>
   );
 }
