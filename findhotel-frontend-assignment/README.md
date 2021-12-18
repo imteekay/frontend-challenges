@@ -40,7 +40,7 @@ type Room = {
 };
 
 type GuestRooms = {
-  rooms: Room[];
+  rooms: Room;
 };
 ```
 
