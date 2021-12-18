@@ -1,17 +1,21 @@
 import React, { useCallback } from 'react';
 
-export const NumberInput = ({ value, updateValue }) => {
+export const NumberInput = ({ value, updateValue, minValue, maxValue }) => {
+  const isAbleToDecreaseValue = value > minValue;
+  const isAbleToIncreaseValue = value < maxValue;
+
   const decreaseNumber = useCallback(
-    () => updateValue(value && value - 1),
-    [value, updateValue]
+    () => isAbleToDecreaseValue && updateValue(value - 1),
+    [value, updateValue, isAbleToDecreaseValue]
   );
 
   const increaseNumber = useCallback(
-    () => updateValue(value + 1),
-    [value, updateValue]
+    () => isAbleToIncreaseValue && updateValue(value + 1),
+    [value, updateValue, isAbleToIncreaseValue]
   );
 
-  const isDecreaseDisabled = value === 0;
+  const isDecreaseDisabled = value === minValue;
+  const isIncreaseDisabled = value === maxValue;
 
   return (
     <>
@@ -19,7 +23,9 @@ export const NumberInput = ({ value, updateValue }) => {
         -
       </button>
       {value}
-      <button onClick={increaseNumber}>+</button>
+      <button disabled={isIncreaseDisabled} onClick={increaseNumber}>
+        +
+      </button>
     </>
   );
 };
