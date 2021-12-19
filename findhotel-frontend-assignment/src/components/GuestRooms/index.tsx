@@ -9,7 +9,7 @@ export const GuestRooms = () => {
   return (
     <>
       {rooms.map((room) => (
-        <GuestRoom room={room} />
+        <GuestRoom key={room} room={room} />
       ))}
       <button onClick={addRoom}>+ Add room</button>
     </>

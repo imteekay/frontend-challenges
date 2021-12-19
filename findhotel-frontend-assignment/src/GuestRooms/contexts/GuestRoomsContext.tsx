@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react';
-import { GuestRooms, Room, Child } from '../types/GuestRooms';
+import { GuestRooms, Child } from '../types/GuestRooms';
+import { toGuestRooms } from '../transformers/toGuestRooms';
 
 type GuestRoomsValues = {
   getAdultsCount: (room: string) => number;
@@ -15,17 +16,21 @@ type GuestRoomsValues = {
 
 export const GuestRoomsContext = createContext<GuestRoomsValues>(undefined);
 
-const ROOMS_DEFAULT = {
-  'Room 1': {
-    adultsCount: 2,
-    children: [],
+const GUEST_ROOMS_DEFAULT = {
+  rooms: {
+    'Room 1': {
+      adultsCount: 2,
+      children: [],
+    },
   },
 };
 
-export const GuestRoomsProvider = (props) => {
-  const [guestRooms, setGuestRooms] = useState<GuestRooms>({
-    rooms: ROOMS_DEFAULT,
-  });
+export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
+  const defaultGuestRooms = guestRoomsString
+    ? toGuestRooms(guestRoomsString)
+    : GUEST_ROOMS_DEFAULT;
+
+  const [guestRooms, setGuestRooms] = useState<GuestRooms>(defaultGuestRooms);
 
   function getAdultsCount(room: string) {
     return guestRooms.rooms[room].adultsCount;
@@ -134,7 +139,7 @@ export const GuestRoomsProvider = (props) => {
 
   return (
     <GuestRoomsContext.Provider value={providerValue}>
-      {props.children}
+      {children}
     </GuestRoomsContext.Provider>
   );
 };
