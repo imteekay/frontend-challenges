@@ -10,7 +10,7 @@ export const GuestRoom = ({ room = 'Room 1' }) => {
   const chidren = getChildren(room);
 
   const childAgeOnChange = (childIndex) => (event) => {
-    const childAge = event.target.value;
+    const childAge = Number(event.target.value);
     updateChild(room, childIndex, childAge);
   };
 

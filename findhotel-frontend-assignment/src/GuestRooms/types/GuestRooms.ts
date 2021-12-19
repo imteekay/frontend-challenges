@@ -2,13 +2,13 @@ export type Child = {
   age: number;
 };
 
-type Room = {
-  [room: string]: {
-    adultsCount: number;
-    children: Child[];
-  };
+export type Room = {
+  adultsCount: number;
+  children: Child[];
 };
 
 export type GuestRooms = {
-  rooms: Room;
+  rooms: {
+    [room: string]: Room;
+  };
 };
