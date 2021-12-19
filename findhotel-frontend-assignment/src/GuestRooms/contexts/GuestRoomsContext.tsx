@@ -5,6 +5,7 @@ import { toGuestRooms } from '../transformers/toGuestRooms';
 type GuestRoomsValues = {
   getAdultsCount: (room: string) => number;
   getChildrenCount: (room: string) => number;
+  getGuestsCount: () => number;
   getChildren: (room: string) => Child[];
   getRooms: () => string[];
   updateAdultsCount: (room: string, count: number) => void;
@@ -12,6 +13,7 @@ type GuestRoomsValues = {
   addChild: (room: string) => void;
   removeChild: (room: string) => void;
   addRoom: () => void;
+  guestRooms: GuestRooms;
 };
 
 export const GuestRoomsContext = createContext<GuestRoomsValues>(undefined);
@@ -38,6 +40,14 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
 
   function getChildrenCount(room: string) {
     return guestRooms.rooms[room].children.length;
+  }
+
+  function getGuestsCount() {
+    return Object.values(guestRooms.rooms).reduce(
+      (guestsCount, room) =>
+        guestsCount + room.adultsCount + room.children.length,
+      0
+    );
   }
 
   function getChildren(room: string) {
@@ -128,6 +138,7 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
   const providerValue = {
     getAdultsCount,
     getChildrenCount,
+    getGuestsCount,
     getChildren,
     getRooms,
     updateAdultsCount,
@@ -135,6 +146,7 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
     addChild,
     removeChild,
     addRoom,
+    guestRooms,
   };
 
   return (

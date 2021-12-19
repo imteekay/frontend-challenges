@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { GuestRoom } from './GuestRoom';
 import { GuestRoomsContext } from '../../GuestRooms/contexts/GuestRoomsContext';
+import { SearchButton } from './SearchButton';
 
 export const GuestRooms = () => {
   const { getRooms, addRoom } = useContext(GuestRoomsContext);
@@ -12,6 +13,7 @@ export const GuestRooms = () => {
         <GuestRoom key={room} room={room} />
       ))}
       <button onClick={addRoom}>+ Add room</button>
+      <SearchButton />
     </>
   );
 };
