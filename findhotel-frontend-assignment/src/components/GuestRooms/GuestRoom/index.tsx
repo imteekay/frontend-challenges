@@ -20,7 +20,11 @@ export const GuestRoom = ({ room = 'Room 1' }) => {
       <ChildrenCountInput room={room} />
 
       {chidren.map((child, index) => (
-        <select onChange={childAgeOnChange(index)} value={child.age}>
+        <select
+          onChange={childAgeOnChange(index)}
+          value={child.age}
+          key={`${room}-child-${index}`}
+        >
           {ageOptions.map((_, age) => (
             <option
               value={age}
