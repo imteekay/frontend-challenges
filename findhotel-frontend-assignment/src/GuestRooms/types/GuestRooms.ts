@@ -1,4 +1,4 @@
-type Child = {
+export type Child = {
   age: number;
 };
 

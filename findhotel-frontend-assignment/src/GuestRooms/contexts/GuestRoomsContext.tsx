@@ -1,9 +1,10 @@
 import { createContext, useState } from 'react';
-import { GuestRooms } from '../types/GuestRooms';
+import { GuestRooms, Child } from '../types/GuestRooms';
 
 type GuestRoomsValues = {
   getAdultsCount: (room: string) => number;
   getChildrenCount: (room: string) => number;
+  getChildren: (room: string) => Child[];
   updateAdultsCount: (room: string, count: number) => void;
   updateChild: (room: string, childIndex: number, childAge: number) => void;
   addChild: (room: string) => void;
@@ -32,6 +33,10 @@ export const GuestRoomsProvider = (props) => {
     return guestRooms.rooms[room].children.length;
   }
 
+  function getChildren(room: string) {
+    return guestRooms.rooms[room].children;
+  }
+
   function updateAdultsCount(room: string, count: number) {
     setGuestRooms({
       rooms: {
@@ -51,12 +56,15 @@ export const GuestRoomsProvider = (props) => {
       age: childAge,
     };
 
-    guestRooms.rooms[room] = {
-      ...guestRooms.rooms[room],
-      children,
-    };
-
-    setGuestRooms(guestRooms);
+    setGuestRooms({
+      rooms: {
+        ...guestRooms.rooms,
+        [room]: {
+          ...guestRooms.rooms[room],
+          children,
+        },
+      },
+    });
   }
 
   function addChild(room: string) {
@@ -97,6 +105,7 @@ export const GuestRoomsProvider = (props) => {
   const providerValue = {
     getAdultsCount,
     getChildrenCount,
+    getChildren,
     updateAdultsCount,
     updateChild,
     addChild,
