@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { toGuestRoomsString } from '../../../GuestRooms/transformers/toGuestRoomsString';
+import { Button } from '../../Button';
 
 function getRoomsCountText(roomsCount: number) {
   return roomsCount > 1 ? `${roomsCount} rooms` : `${roomsCount} room`;
@@ -35,8 +36,8 @@ export const SearchButton = () => {
   const guestsCountText = getGuestsCountText(guestsCount);
 
   return (
-    <button onClick={search(guestRooms)}>
+    <Button onClick={search(guestRooms)}>
       Search {roomsCountText} • {guestsCountText}
-    </button>
+    </Button>
   );
 };

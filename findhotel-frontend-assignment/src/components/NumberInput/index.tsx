@@ -1,3 +1,5 @@
+import { Button } from '../Button';
+
 export const NumberInput = ({
   value,
   increaseValue,
@@ -16,13 +18,13 @@ export const NumberInput = ({
 
   return (
     <>
-      <button disabled={isDecreaseDisabled} onClick={decreaseNumber}>
+      <Button disabled={isDecreaseDisabled} onClick={decreaseNumber}>
         -
-      </button>
+      </Button>
       {value}
-      <button disabled={isIncreaseDisabled} onClick={increaseNumber}>
+      <Button disabled={isIncreaseDisabled} onClick={increaseNumber}>
         +
-      </button>
+      </Button>
     </>
   );
 };

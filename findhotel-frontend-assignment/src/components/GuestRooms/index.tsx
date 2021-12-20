@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { GuestRoom } from './GuestRoom';
 import { GuestRoomsContext } from '../../GuestRooms/contexts/GuestRoomsContext';
 import { SearchButton } from './SearchButton';
+import { Button } from '../Button';
 
 export const GuestRooms = () => {
   const { getRooms, addRoom, removeRoom } = useContext(GuestRoomsContext);
@@ -17,11 +18,11 @@ export const GuestRooms = () => {
         <div key={room}>
           <GuestRoom room={room} />
           {index && (
-            <button onClick={removeRoomOnClick(room)}>Remove room</button>
+            <Button onClick={removeRoomOnClick(room)}>Remove room</Button>
           )}
         </div>
       ))}
-      <button onClick={addRoom}>+ Add room</button>
+      <Button onClick={addRoom}>+ Add room</Button>
       <SearchButton />
     </>
   );

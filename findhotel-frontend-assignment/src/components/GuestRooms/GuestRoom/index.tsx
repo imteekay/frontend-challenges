@@ -2,6 +2,7 @@ import { ChangeEvent, useContext } from 'react';
 import { AdultsCountInput } from '../AdultsCountInput';
 import { ChildrenCountInput } from '../ChildrenCountInput';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
+import { Button } from '../../Button';
 
 const ageOptions = [...Array(18)];
 
@@ -38,7 +39,7 @@ export const GuestRoom = ({ room = 'Room 1' }) => {
               </option>
             ))}
           </select>
-          <button onClick={removeOnClick(index)}>X</button>
+          <Button onClick={removeOnClick(index)}>X</Button>
         </div>
       ))}
     </>
