@@ -18,11 +18,19 @@ export const NumberInput = ({
 
   return (
     <>
-      <Button disabled={isDecreaseDisabled} onClick={decreaseNumber}>
+      <Button
+        disabled={isDecreaseDisabled}
+        onClick={decreaseNumber}
+        variant="secondary"
+      >
         -
       </Button>
       {value}
-      <Button disabled={isIncreaseDisabled} onClick={increaseNumber}>
+      <Button
+        disabled={isIncreaseDisabled}
+        onClick={increaseNumber}
+        variant="secondary"
+      >
         +
       </Button>
     </>
