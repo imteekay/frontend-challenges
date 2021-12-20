@@ -1,12 +1,9 @@
-import React from 'react';
-import Hello from './components/Hello';
-import './App.css';
+import { GuestRoomOverlay } from './components/GuestRoomOverlay';
 
 function App() {
   return (
     <div className="App">
-      <Hello />
-      Your code here :)
+      <GuestRoomOverlay />
     </div>
   );
 }
