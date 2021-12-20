@@ -1,14 +1,9 @@
-import { GuestRooms } from './components/GuestRooms';
-import { GuestRoomsProvider } from './GuestRooms/contexts/GuestRoomsContext';
-
-import './App.css';
+import { GuestRoomOverlay } from './components/GuestRoomOverlay';
 
 function App() {
   return (
     <div className="App">
-      <GuestRoomsProvider guestRoomsString="1:0,13,16">
-        <GuestRooms />
-      </GuestRoomsProvider>
+      <GuestRoomOverlay />
     </div>
   );
 }

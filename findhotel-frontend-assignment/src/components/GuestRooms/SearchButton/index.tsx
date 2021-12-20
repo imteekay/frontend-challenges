@@ -10,6 +10,21 @@ function getGuestsCountText(guestsCount: number) {
   return guestsCount > 1 ? `${guestsCount} guests` : `${guestsCount} guest`;
 }
 
+function getPushState() {
+  return (state, url: string) => window.history.pushState(state, '', url);
+}
+
+function search(guestRooms) {
+  const pushState = getPushState();
+  const guestRoomsString = toGuestRoomsString(guestRooms);
+
+  return () =>
+    pushState(
+      { guestRooms: guestRoomsString },
+      `?guestRooms="${guestRoomsString}"`
+    );
+}
+
 export const SearchButton = () => {
   const { guestRooms, getRooms, getGuestsCount } =
     useContext(GuestRoomsContext);
@@ -19,13 +34,8 @@ export const SearchButton = () => {
   const guestsCount = getGuestsCount();
   const guestsCountText = getGuestsCountText(guestsCount);
 
-  const search = () => {
-    console.log('guestRooms', guestRooms);
-    console.log('guestRooms string', toGuestRoomsString(guestRooms));
-  };
-
   return (
-    <button onClick={search}>
+    <button onClick={search(guestRooms)}>
       Search {roomsCountText} • {guestsCountText}
     </button>
   );
