@@ -11,7 +11,7 @@ type GuestRoomsValues = {
   updateAdultsCount: (room: string, count: number) => void;
   updateChild: (room: string, childIndex: number, childAge: number) => void;
   addChild: (room: string) => void;
-  removeChild: (room: string) => void;
+  removeChild: (room: string, childIndex?: number) => void;
   addRoom: () => void;
   guestRooms: GuestRooms;
 };
@@ -107,10 +107,10 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
     });
   }
 
-  function removeChild(room: string) {
+  function removeChild(room: string, childIndex: number = -1) {
     const children = guestRooms.rooms[room].children;
 
-    children.pop();
+    children.splice(childIndex, 1);
 
     setGuestRooms({
       rooms: {
