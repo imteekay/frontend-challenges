@@ -1,4 +1,5 @@
 import { FC, useContext } from 'react';
+import { css } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { Button } from '../../Button';
 import { ReactComponent as CloseIcon } from '../../Button/close.svg';
@@ -16,7 +17,13 @@ export const CloseButton: FC<CloseButtonPropTypes> = ({ room, index }) => {
   };
 
   return (
-    <Button variant="danger" onClick={removeOnClick(index)}>
+    <Button
+      variant="danger"
+      onClick={removeOnClick(index)}
+      className={css`
+        padding: 8px;
+      `}
+    >
       <CloseIcon />
     </Button>
   );
