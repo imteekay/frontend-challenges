@@ -1,4 +1,7 @@
+import { css } from '@emotion/css';
 import { Button } from '../Button';
+import { ReactComponent as PlusIcon } from '../Icons/plus.svg';
+import { ReactComponent as MinusIcon } from '../Icons/minus.svg';
 
 export const NumberInput = ({
   value,
@@ -25,16 +28,22 @@ export const NumberInput = ({
         disabled={isDecreaseDisabled}
         onClick={decreaseNumber}
         variant={decreaseButtonVariant}
+        className={css`
+          padding: 8px;
+        `}
       >
-        -
+        <MinusIcon />
       </Button>
       {value}
       <Button
         disabled={isIncreaseDisabled}
         onClick={increaseNumber}
         variant={increaseButtonVariant}
+        className={css`
+          padding: 8px;
+        `}
       >
-        +
+        <PlusIcon />
       </Button>
     </>
   );

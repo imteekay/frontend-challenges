@@ -2,7 +2,7 @@ import { FC, useContext } from 'react';
 import { css } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { Button } from '../../Button';
-import { ReactComponent as CloseIcon } from '../../Button/close.svg';
+import { ReactComponent as CloseIcon } from '../../Icons/close.svg';
 
 type CloseButtonPropTypes = {
   room: string;
