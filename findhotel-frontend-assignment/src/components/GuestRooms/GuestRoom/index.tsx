@@ -2,13 +2,12 @@ import { ChangeEvent, useContext } from 'react';
 import { AdultsCountInput } from '../AdultsCountInput';
 import { ChildrenCountInput } from '../ChildrenCountInput';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
-import { Button } from '../../Button';
+import { CloseButton } from '../CloseButton';
 
 const ageOptions = [...Array(18)];
 
 export const GuestRoom = ({ room = 'Room 1' }) => {
-  const { getChildren, updateChild, removeChild } =
-    useContext(GuestRoomsContext);
+  const { getChildren, updateChild } = useContext(GuestRoomsContext);
 
   const chidren = getChildren(room);
 
@@ -17,10 +16,6 @@ export const GuestRoom = ({ room = 'Room 1' }) => {
       const childAge = Number(event.target.value);
       updateChild(room, childIndex, childAge);
     };
-
-  const removeOnClick = (childIndex: number) => () => {
-    removeChild(room, childIndex);
-  };
 
   return (
     <>
@@ -39,7 +34,7 @@ export const GuestRoom = ({ room = 'Room 1' }) => {
               </option>
             ))}
           </select>
-          <Button onClick={removeOnClick(index)}>X</Button>
+          <CloseButton room={room} index={index} />
         </div>
       ))}
     </>

@@ -18,7 +18,9 @@ export const GuestRooms = () => {
         <div key={room}>
           <GuestRoom room={room} />
           {index && (
-            <Button onClick={removeRoomOnClick(room)}>Remove room</Button>
+            <Button variant="danger" onClick={removeRoomOnClick(room)}>
+              Remove room
+            </Button>
           )}
         </div>
       ))}
