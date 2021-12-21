@@ -16,12 +16,15 @@ export const NumberInput = ({
   const decreaseNumber = () => isAbleToDecreaseValue && decreaseValue();
   const increaseNumber = () => isAbleToIncreaseValue && increaseValue();
 
+  const decreaseButtonVariant = isDecreaseDisabled ? 'disabled' : 'secondary';
+  const increaseButtonVariant = isIncreaseDisabled ? 'disabled' : 'secondary';
+
   return (
     <>
       <Button
         disabled={isDecreaseDisabled}
         onClick={decreaseNumber}
-        variant="secondary"
+        variant={decreaseButtonVariant}
       >
         -
       </Button>
@@ -29,7 +32,7 @@ export const NumberInput = ({
       <Button
         disabled={isIncreaseDisabled}
         onClick={increaseNumber}
-        variant="secondary"
+        variant={increaseButtonVariant}
       >
         +
       </Button>
