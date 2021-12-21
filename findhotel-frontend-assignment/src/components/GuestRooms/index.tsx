@@ -13,19 +13,19 @@ export const GuestRooms = () => {
   };
 
   return (
-    <>
+    <div>
       {rooms.map((room, index) => (
         <div key={room}>
           <GuestRoom room={room} />
-          {index && (
+          {index ? (
             <Button variant="danger" onClick={removeRoomOnClick(room)}>
               Remove room
             </Button>
-          )}
+          ) : null}
         </div>
       ))}
       <Button onClick={addRoom}>+ Add room</Button>
       <SearchButton />
-    </>
+    </div>
   );
 };

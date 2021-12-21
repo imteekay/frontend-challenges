@@ -10,7 +10,8 @@ type ChildrenSelectPropTypes = {
 const ageOptions = [...Array(18)];
 
 const selectWrapperClassName = css`
-  width: 100px;
+  width: 130px;
+  display: flex;
 `;
 
 const selectClassName = css`

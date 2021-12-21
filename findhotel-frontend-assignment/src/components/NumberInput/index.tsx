@@ -23,13 +23,14 @@ export const NumberInput = ({
   const increaseButtonVariant = isIncreaseDisabled ? 'disabled' : 'secondary';
 
   return (
-    <>
+    <div>
       <Button
         disabled={isDecreaseDisabled}
         onClick={decreaseNumber}
         variant={decreaseButtonVariant}
         className={css`
           padding: 8px;
+          margin-right: 24px;
         `}
       >
         <MinusIcon />
@@ -41,10 +42,11 @@ export const NumberInput = ({
         variant={increaseButtonVariant}
         className={css`
           padding: 8px;
+          margin-left: 24px;
         `}
       >
         <PlusIcon />
       </Button>
-    </>
+    </div>
   );
 };
