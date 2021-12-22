@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { css } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { toGuestRoomsString } from '../../../GuestRooms/transformers/toGuestRoomsString';
 import { Button } from '../../Button';
@@ -36,8 +37,15 @@ export const SearchButton = () => {
   const guestsCountText = getGuestsCountText(guestsCount);
 
   return (
-    <Button onClick={search(guestRooms)} fullWidth>
-      Search {roomsCountText} • {guestsCountText}
-    </Button>
+    <div
+      className={css`
+        padding: 16px;
+        border-top: 1px solid #eff2f6;
+      `}
+    >
+      <Button onClick={search(guestRooms)} fullWidth>
+        Search {roomsCountText} • {guestsCountText}
+      </Button>
+    </div>
   );
 };

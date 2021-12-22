@@ -3,8 +3,7 @@ import { css } from '@emotion/css';
 import { GuestRooms } from '../GuestRooms';
 import { GuestRoomsProvider } from '../../GuestRooms/contexts/GuestRoomsContext';
 import { SearchButton } from '../GuestRooms/SearchButton';
-import { Button } from '../Button';
-import { ReactComponent as CloseIcon } from '../Icons/close.svg';
+import { Header } from './Header';
 
 const overlayClassName = css`
   display: flex;
@@ -30,47 +29,13 @@ type GuestRoomOverlayPropTypes = {
 export const GuestRoomOverlay: FC<GuestRoomOverlayPropTypes> = ({
   guestRoomsString = '1:0,13,16',
 }) => (
-  <div className={overlayClassName}>
-    <GuestRoomsProvider guestRoomsString={guestRoomsString}>
+  <GuestRoomsProvider guestRoomsString={guestRoomsString}>
+    <div className={overlayClassName}>
       <div className={modelClassName}>
-        <div
-          className={css`
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 16px;
-            border-bottom: 1px solid #eff2f6;
-          `}
-        >
-          <header
-            className={css`
-              font-weight: 700;
-              font-size: 21px;
-            `}
-          >
-            Rooms & Guests
-          </header>
-          <Button
-            variant="close"
-            onClick={() => {}}
-            className={css`
-              padding: 0;
-            `}
-          >
-            <CloseIcon />
-          </Button>
-        </div>
+        <Header />
         <GuestRooms />
-
-        <div
-          className={css`
-            padding: 16px;
-            border-top: 1px solid #eff2f6;
-          `}
-        >
-          <SearchButton />
-        </div>
+        <SearchButton />
       </div>
-    </GuestRoomsProvider>
-  </div>
+    </div>
+  </GuestRoomsProvider>
 );

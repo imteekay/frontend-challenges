@@ -9,12 +9,8 @@ const roomWrapperClassName = css`
 `;
 
 export const GuestRooms = () => {
-  const { getRooms, addRoom, removeRoom } = useContext(GuestRoomsContext);
+  const { getRooms, addRoom } = useContext(GuestRoomsContext);
   const rooms = getRooms();
-
-  const removeRoomOnClick = (room: string) => () => {
-    removeRoom(room);
-  };
 
   return (
     <div
@@ -25,12 +21,7 @@ export const GuestRooms = () => {
     >
       {rooms.map((room, index) => (
         <div key={room} className={roomWrapperClassName}>
-          <GuestRoom room={room} />
-          {index ? (
-            <Button variant="danger" onClick={removeRoomOnClick(room)}>
-              Remove room
-            </Button>
-          ) : null}
+          <GuestRoom room={room} index={index} />
         </div>
       ))}
       <Button variant="secondary" onClick={addRoom} fullWidth>
