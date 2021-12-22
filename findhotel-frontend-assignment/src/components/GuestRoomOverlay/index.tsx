@@ -11,7 +11,7 @@ const overlayClassName = css`
   z-index: 111;
 `;
 
-const blackdropClassName = css`
+const backdropClassName = css`
   top: 0px;
   left: 0px;
   width: 100%;
@@ -52,7 +52,7 @@ export const GuestRoomOverlay: FC<GuestRoomOverlayPropTypes> = ({
 }) =>
   open ? (
     <div className={overlayClassName}>
-      <div onClick={onClose} className={blackdropClassName} />
+      <div onClick={onClose} className={backdropClassName} />
       <GuestRoomsProvider guestRoomsString={guestRoomsString}>
         <div className={modelClassName}>
           <Header onClose={onClose} />
