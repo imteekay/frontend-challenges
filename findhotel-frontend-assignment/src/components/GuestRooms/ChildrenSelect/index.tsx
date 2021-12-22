@@ -9,6 +9,21 @@ type ChildrenSelectPropTypes = {
 
 const ageOptions = [...Array(18)];
 
+const childrenSelectWrapper = css`
+  margin-left: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #eff2f6;
+`;
+
+const childAgeSelectWrapper = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 15px;
+`;
+
 const selectWrapperClassName = css`
   width: 130px;
   display: flex;
@@ -51,26 +66,32 @@ export const ChildrenSelect = ({ room }: ChildrenSelectPropTypes) => {
     };
 
   return (
-    <>
+    <div className={childrenSelectWrapper}>
       {chidren.map((child, index) => (
-        <div key={`${room}-child-${index}`} className={selectWrapperClassName}>
-          <select
-            onChange={childAgeOnChange(index)}
-            value={child.age}
-            className={selectClassName}
+        <div className={childAgeSelectWrapper}>
+          <span>Child {index} age</span>
+          <div
+            key={`${room}-child-${index}`}
+            className={selectWrapperClassName}
           >
-            {ageOptions.map((_, age) => (
-              <option
-                value={age}
-                key={`${room}-child-${index}-age-option-${age}`}
-              >
-                {age ? age : '<1'}
-              </option>
-            ))}
-          </select>
-          <CloseButton room={room} index={index} />
+            <select
+              onChange={childAgeOnChange(index)}
+              value={child.age}
+              className={selectClassName}
+            >
+              {ageOptions.map((_, age) => (
+                <option
+                  value={age}
+                  key={`${room}-child-${index}-age-option-${age}`}
+                >
+                  {age ? age : '<1'}
+                </option>
+              ))}
+            </select>
+            <CloseButton room={room} index={index} />
+          </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };

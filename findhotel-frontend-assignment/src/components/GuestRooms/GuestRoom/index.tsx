@@ -15,6 +15,13 @@ const countInputClassName = css`
   margin-bottom: 16px;
 `;
 
+const childrenCountInputClassName = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+`;
+
 export const GuestRoom = ({ room = 'Room 1' }) => (
   <>
     <h2 className={roomTitleClassName}>{room}</h2>
@@ -22,7 +29,7 @@ export const GuestRoom = ({ room = 'Room 1' }) => (
       <span>Adults</span>
       <AdultsCountInput room={room} />
     </div>
-    <div className={countInputClassName}>
+    <div className={childrenCountInputClassName}>
       <span>Children</span>
       <ChildrenCountInput room={room} />
     </div>

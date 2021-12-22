@@ -1,8 +1,12 @@
 import { useContext } from 'react';
 import { GuestRoom } from './GuestRoom';
 import { GuestRoomsContext } from '../../GuestRooms/contexts/GuestRoomsContext';
-import { SearchButton } from './SearchButton';
 import { Button } from '../Button';
+import { css } from '@emotion/css';
+
+const roomWrapperClassName = css`
+  border-bottom: 1px solid #eff2f6;
+`;
 
 export const GuestRooms = () => {
   const { getRooms, addRoom, removeRoom } = useContext(GuestRoomsContext);
@@ -13,9 +17,14 @@ export const GuestRooms = () => {
   };
 
   return (
-    <div>
+    <div
+      className={css`
+        overflow-y: scroll;
+        padding: 16px 16px 80px;
+      `}
+    >
       {rooms.map((room, index) => (
-        <div key={room}>
+        <div key={room} className={roomWrapperClassName}>
           <GuestRoom room={room} />
           {index ? (
             <Button variant="danger" onClick={removeRoomOnClick(room)}>
@@ -24,8 +33,9 @@ export const GuestRooms = () => {
           ) : null}
         </div>
       ))}
-      <Button onClick={addRoom}>+ Add room</Button>
-      <SearchButton />
+      <Button variant="secondary" onClick={addRoom} fullWidth>
+        + Add room
+      </Button>
     </div>
   );
 };

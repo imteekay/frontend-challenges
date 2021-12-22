@@ -1,13 +1,14 @@
 import { FC } from 'react';
 import { css } from '@emotion/css';
 
-type ButtonVariants = 'primary' | 'secondary' | 'disabled' | 'danger';
+type ButtonVariants = 'primary' | 'secondary' | 'disabled' | 'danger' | 'close';
 
 type ButtonPropTypes = {
   disabled?: boolean;
   onClick: () => void;
   variant?: ButtonVariants;
   className?: string;
+  fullWidth?: boolean;
 };
 
 const Cursor = {
@@ -15,13 +16,15 @@ const Cursor = {
   secondary: 'pointer',
   disabled: 'not-allowed',
   danger: 'pointer',
+  close: 'pointer',
 };
 
 const Colors = {
   primary: 'white',
   secondary: '#0071f3',
   disabled: '#6a7886',
-  danger: 'rgb(216, 59, 59)',
+  danger: '#d83b3b',
+  close: '#6a7886',
 };
 
 const BackgroundColors = {
@@ -29,6 +32,7 @@ const BackgroundColors = {
   secondary: '#f7fbff',
   disabled: '#eff2F6',
   danger: 'rgba(255, 255, 255, 0)',
+  close: 'rgba(255, 255, 255, 0)',
 };
 
 const BackgroundColorsHover = {
@@ -36,6 +40,7 @@ const BackgroundColorsHover = {
   secondary: '#e4f0fe',
   disabled: '#eff2F6',
   danger: 'rgba(255, 255, 255, 0)',
+  close: 'rgba(255, 255, 255, 0)',
 };
 
 const BoxShadow = {
@@ -43,6 +48,7 @@ const BoxShadow = {
   secondary: '#bfdaf9 0px 0px 0px 1px inset',
   disabled: 'none',
   danger: 'none',
+  close: 'none',
 };
 
 export const Button: FC<ButtonPropTypes> = ({
@@ -51,6 +57,7 @@ export const Button: FC<ButtonPropTypes> = ({
   onClick,
   variant = 'primary',
   className,
+  fullWidth = false,
 }) => (
   <button
     disabled={disabled}
@@ -73,6 +80,8 @@ export const Button: FC<ButtonPropTypes> = ({
       color: ${Colors[variant]};
       background-color: ${BackgroundColors[variant]};
       box-shadow: ${BoxShadow[variant]};
+
+      width: ${fullWidth ? '100%' : 'auto'};
 
       &:hover {
         background-color: ${BackgroundColorsHover[variant]};

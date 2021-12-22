@@ -35,7 +35,14 @@ export const NumberInput = ({
       >
         <MinusIcon />
       </Button>
-      {value}
+      <span
+        className={css`
+          width: 10px;
+          display: inline-block;
+        `}
+      >
+        {value}
+      </span>
       <Button
         disabled={isIncreaseDisabled}
         onClick={increaseNumber}

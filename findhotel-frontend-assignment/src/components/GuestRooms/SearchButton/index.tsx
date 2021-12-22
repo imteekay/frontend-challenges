@@ -36,7 +36,7 @@ export const SearchButton = () => {
   const guestsCountText = getGuestsCountText(guestsCount);
 
   return (
-    <Button onClick={search(guestRooms)}>
+    <Button onClick={search(guestRooms)} fullWidth>
       Search {roomsCountText} • {guestsCountText}
     </Button>
   );

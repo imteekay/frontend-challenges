@@ -1,3 +1,4 @@
+import './App.css';
 import { GuestRoomOverlay } from './components/GuestRoomOverlay';
 
 function App() {
