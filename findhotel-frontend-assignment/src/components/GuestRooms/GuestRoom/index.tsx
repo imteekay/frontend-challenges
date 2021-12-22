@@ -32,6 +32,12 @@ const childrenCountInputClassName = css`
   margin-bottom: 24px;
 `;
 
+const removeButtonClassName = css`
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+`;
+
 export const GuestRoom = ({ room = 'Room 1', index }) => {
   const { removeRoom } = useContext(GuestRoomsContext);
   const removeRoomOnClick = (room: string) => () => {
@@ -46,11 +52,7 @@ export const GuestRoom = ({ room = 'Room 1', index }) => {
           <Button
             variant="danger"
             onClick={removeRoomOnClick(room)}
-            className={css`
-              padding: 0;
-              font-size: 16px;
-              font-weight: 600;
-            `}
+            className={removeButtonClassName}
           >
             Remove room
           </Button>
