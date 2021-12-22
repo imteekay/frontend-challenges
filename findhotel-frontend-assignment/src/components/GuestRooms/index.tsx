@@ -6,6 +6,7 @@ import { css } from '@emotion/css';
 
 const roomWrapperClassName = css`
   border-bottom: 1px solid #eff2f6;
+  margin-bottom: 16px;
 `;
 
 export const GuestRooms = () => {
