@@ -24,15 +24,17 @@ const modelClassName = css`
 
 type GuestRoomOverlayPropTypes = {
   guestRoomsString?: string;
+  onClose: () => void;
 };
 
 export const GuestRoomOverlay: FC<GuestRoomOverlayPropTypes> = ({
   guestRoomsString = '1:0,13,16',
+  onClose,
 }) => (
   <GuestRoomsProvider guestRoomsString={guestRoomsString}>
     <div className={overlayClassName}>
       <div className={modelClassName}>
-        <Header />
+        <Header onClose={onClose} />
         <GuestRooms />
         <SearchButton />
       </div>

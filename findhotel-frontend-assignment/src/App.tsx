@@ -4,7 +4,7 @@ import { GuestRoomOverlay } from './components/GuestRoomOverlay';
 function App() {
   return (
     <div className="App">
-      <GuestRoomOverlay />
+      <GuestRoomOverlay onClose={() => console.log('closing')} />
     </div>
   );
 }
