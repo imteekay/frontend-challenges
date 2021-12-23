@@ -4,7 +4,7 @@ import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContex
 import { CloseButton } from '../CloseButton';
 
 type ChildrenSelectPropTypes = {
-  room: string;
+  roomIndex: number;
 };
 
 const ageOptions = [...Array(18)];
@@ -55,22 +55,25 @@ const selectStyle = css`
   background-repeat: no-repeat;
 `;
 
-export const ChildrenSelect = ({ room }: ChildrenSelectPropTypes) => {
+export const ChildrenSelect = ({ roomIndex }: ChildrenSelectPropTypes) => {
   const { getChildren, updateChild } = useContext(GuestRoomsContext);
-  const chidren = getChildren(room);
+  const chidren = getChildren(roomIndex);
 
   const childAgeOnChange =
     (childIndex: number) => (event: ChangeEvent<HTMLSelectElement>) => {
       const childAge = Number(event.target.value);
-      updateChild(room, childIndex, childAge);
+      updateChild(roomIndex, childIndex, childAge);
     };
 
   return (
     <div className={childrenSelectWrapper}>
       {chidren.map((child, index) => (
-        <div className={childAgeSelectWrapper}>
+        <div
+          className={childAgeSelectWrapper}
+          key={`${roomIndex}-child-${index}`}
+        >
           <span>Child {index} age</span>
-          <div key={`${room}-child-${index}`} className={selectWrapperStyle}>
+          <div className={selectWrapperStyle}>
             <select
               onChange={childAgeOnChange(index)}
               value={child.age}
@@ -79,13 +82,13 @@ export const ChildrenSelect = ({ room }: ChildrenSelectPropTypes) => {
               {ageOptions.map((_, age) => (
                 <option
                   value={age}
-                  key={`${room}-child-${index}-age-option-${age}`}
+                  key={`${roomIndex}-child-${index}-age-option-${age}`}
                 >
                   {age ? age : '<1'}
                 </option>
               ))}
             </select>
-            <CloseButton room={room} index={index} />
+            <CloseButton roomIndex={roomIndex} index={index} />
           </div>
         </div>
       ))}

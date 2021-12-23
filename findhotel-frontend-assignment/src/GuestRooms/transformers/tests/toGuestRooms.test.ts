@@ -1,10 +1,10 @@
-import { toGuestRoomsString } from '../toGuestRoomsString';
+import { toGuestRooms } from '../toGuestRooms';
 
-describe('toGuestRoomsString', () => {
+describe('toGuestRooms', () => {
   it('generates GuestRooms based on "1:4,6|3"', () => {
-    expect(toGuestRoomsString('1:4,6|3')).toEqual({
-      rooms: {
-        'Room 1': {
+    expect(toGuestRooms('1:4,6|3')).toEqual({
+      rooms: [
+        {
           adultsCount: 1,
           children: [
             {
@@ -15,29 +15,29 @@ describe('toGuestRoomsString', () => {
             },
           ],
         },
-        'Room 2': {
+        {
           adultsCount: 3,
           children: [],
         },
-      },
+      ],
     });
   });
 
   it('generates GuestRooms based on "3"', () => {
-    expect(toGuestRoomsString('3')).toEqual({
-      rooms: {
-        'Room 1': {
+    expect(toGuestRooms('3')).toEqual({
+      rooms: [
+        {
           adultsCount: 3,
           children: [],
         },
-      },
+      ],
     });
   });
 
   it('generates GuestRooms based on "2:4"', () => {
-    expect(toGuestRoomsString('2:4')).toEqual({
-      rooms: {
-        'Room 1': {
+    expect(toGuestRooms('2:4')).toEqual({
+      rooms: [
+        {
           adultsCount: 2,
           children: [
             {
@@ -45,14 +45,14 @@ describe('toGuestRoomsString', () => {
             },
           ],
         },
-      },
+      ],
     });
   });
 
   it('generates GuestRooms based on "1:0,13,16"', () => {
-    expect(toGuestRoomsString('1:0,13,16')).toEqual({
-      rooms: {
-        'Room 1': {
+    expect(toGuestRooms('1:0,13,16')).toEqual({
+      rooms: [
+        {
           adultsCount: 1,
           children: [
             {
@@ -66,7 +66,7 @@ describe('toGuestRoomsString', () => {
             },
           ],
         },
-      },
+      ],
     });
   });
 });

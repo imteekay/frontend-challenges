@@ -38,20 +38,20 @@ const removeButtonStyle = css`
   font-weight: 600;
 `;
 
-export const GuestRoom = ({ room = 'Room 1', index }) => {
+export const GuestRoom = ({ index }) => {
   const { removeRoom } = useContext(GuestRoomsContext);
-  const removeRoomOnClick = (room: string) => () => {
-    removeRoom(room);
+  const removeRoomOnClick = (roomIndex: number) => () => {
+    removeRoom(roomIndex);
   };
 
   return (
     <>
       <div className={roomTitleWrapperStyle}>
-        <h2 className={roomTitleStyle}>{room}</h2>
+        <h2 className={roomTitleStyle}>Room {index}</h2>
         {index ? (
           <Button
             variant="danger"
-            onClick={removeRoomOnClick(room)}
+            onClick={removeRoomOnClick(index)}
             className={removeButtonStyle}
           >
             Remove room
@@ -60,13 +60,13 @@ export const GuestRoom = ({ room = 'Room 1', index }) => {
       </div>
       <div className={countInputStyle}>
         <span>Adults</span>
-        <AdultsCountInput room={room} />
+        <AdultsCountInput roomIndex={index} />
       </div>
       <div className={childrenCountInputStyle}>
         <span>Children</span>
-        <ChildrenCountInput room={room} />
+        <ChildrenCountInput roomIndex={index} />
       </div>
-      <ChildrenSelect room={room} />
+      <ChildrenSelect roomIndex={index} />
     </>
   );
 };

@@ -8,7 +8,5 @@ export type Room = {
 };
 
 export type GuestRooms = {
-  rooms: {
-    [room: string]: Room;
-  };
+  rooms: Room[];
 };

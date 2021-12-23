@@ -21,9 +21,9 @@ export const GuestRooms = () => {
 
   return (
     <div className={guestRoomsWrapperStyle}>
-      {rooms.map((room, index) => (
-        <div key={room} className={roomWrapperStyle}>
-          <GuestRoom room={room} index={index} />
+      {rooms.map((_, index) => (
+        <div key={`room-key-${index}`} className={roomWrapperStyle}>
+          <GuestRoom index={index} />
         </div>
       ))}
       <Button variant="secondary" onClick={addRoom} fullWidth>

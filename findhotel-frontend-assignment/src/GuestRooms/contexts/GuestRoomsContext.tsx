@@ -1,31 +1,35 @@
 import { createContext, useState } from 'react';
-import { GuestRooms, Child } from '../types/GuestRooms';
+import { GuestRooms, Room, Child } from '../types/GuestRooms';
 import { toGuestRooms } from '../transformers/toGuestRooms';
 
 type GuestRoomsValues = {
-  getAdultsCount: (room: string) => number;
-  getChildrenCount: (room: string) => number;
+  getAdultsCount: (roomIndex: number) => number;
+  getChildrenCount: (roomIndex: number) => number;
   getGuestsCount: () => number;
-  getChildren: (room: string) => Child[];
-  getRooms: () => string[];
-  updateAdultsCount: (room: string, count: number) => void;
-  updateChild: (room: string, childIndex: number, childAge: number) => void;
-  addChild: (room: string) => void;
-  removeChild: (room: string, childIndex?: number) => void;
+  getChildren: (roomIndex: number) => Child[];
+  getRooms: () => Room[];
+  updateAdultsCount: (roomIndex: number, count: number) => void;
+  updateChild: (
+    roomIndex: number,
+    childIndex: number,
+    childAge: number
+  ) => void;
+  addChild: (roomIndex: number) => void;
+  removeChild: (roomIndex: number, childIndex?: number) => void;
   addRoom: () => void;
-  removeRoom: (room: string) => void;
+  removeRoom: (roomIndex: number) => void;
   guestRooms: GuestRooms;
 };
 
 export const GuestRoomsContext = createContext<GuestRoomsValues>(undefined);
 
 const GUEST_ROOMS_DEFAULT = {
-  rooms: {
-    'Room 1': {
+  rooms: [
+    {
       adultsCount: 2,
       children: [],
     },
-  },
+  ],
 };
 
 export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
@@ -35,109 +39,99 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
 
   const [guestRooms, setGuestRooms] = useState<GuestRooms>(defaultGuestRooms);
 
-  function getAdultsCount(room: string) {
-    return guestRooms.rooms[room].adultsCount;
+  function getAdultsCount(roomIndex: number) {
+    return guestRooms.rooms[roomIndex].adultsCount;
   }
 
-  function getChildrenCount(room: string) {
-    return guestRooms.rooms[room].children.length;
+  function getChildrenCount(roomIndex: number) {
+    return guestRooms.rooms[roomIndex].children.length;
   }
 
   function getGuestsCount() {
-    return Object.values(guestRooms.rooms).reduce(
+    return guestRooms.rooms.reduce(
       (guestsCount, room) =>
         guestsCount + room.adultsCount + room.children.length,
       0
     );
   }
 
-  function getChildren(room: string) {
-    return guestRooms.rooms[room].children;
+  function getChildren(roomIndex: number) {
+    return guestRooms.rooms[roomIndex].children;
   }
 
   function getRooms() {
-    return Object.keys(guestRooms.rooms);
+    return guestRooms.rooms;
   }
 
-  function updateAdultsCount(room: string, count: number) {
+  function updateAdultsCount(roomIndex: number, count: number) {
+    guestRooms.rooms[roomIndex] = {
+      ...guestRooms.rooms[roomIndex],
+      adultsCount: count,
+    };
+
     setGuestRooms({
-      rooms: {
-        ...guestRooms.rooms,
-        [room]: {
-          ...guestRooms.rooms[room],
-          adultsCount: count,
-        },
-      },
+      rooms: guestRooms.rooms,
     });
   }
 
-  function updateChild(room: string, childIndex: number, childAge: number) {
-    const children = guestRooms.rooms[room].children;
+  function updateChild(
+    roomIndex: number,
+    childIndex: number,
+    childAge: number
+  ) {
+    const children = guestRooms.rooms[roomIndex].children;
 
     children[childIndex] = {
       age: childAge,
     };
 
+    guestRooms.rooms[roomIndex] = {
+      ...guestRooms.rooms[roomIndex],
+      children,
+    };
+
     setGuestRooms({
-      rooms: {
-        ...guestRooms.rooms,
-        [room]: {
-          ...guestRooms.rooms[room],
-          children,
-        },
-      },
+      rooms: guestRooms.rooms,
     });
   }
 
-  function addChild(room: string) {
-    const children = guestRooms.rooms[room].children;
+  function addChild(roomIndex: number) {
+    const children = guestRooms.rooms[roomIndex].children;
+
+    children.push({
+      ...children,
+      age: 8,
+    });
 
     setGuestRooms({
-      rooms: {
-        ...guestRooms.rooms,
-        [room]: {
-          ...guestRooms.rooms[room],
-          children: [
-            ...children,
-            {
-              age: 8,
-            },
-          ],
-        },
-      },
+      rooms: guestRooms.rooms,
     });
   }
 
-  function removeChild(room: string, childIndex: number = -1) {
-    const children = guestRooms.rooms[room].children;
+  function removeChild(roomIndex: number, childIndex: number = -1) {
+    const children = guestRooms.rooms[roomIndex].children;
 
     children.splice(childIndex, 1);
 
     setGuestRooms({
-      rooms: {
-        ...guestRooms.rooms,
-        [room]: {
-          ...guestRooms.rooms[room],
-          children,
-        },
-      },
+      rooms: guestRooms.rooms,
     });
   }
 
   function addRoom() {
     setGuestRooms({
-      rooms: {
+      rooms: [
         ...guestRooms.rooms,
-        [`Room ${Object.keys(guestRooms.rooms).length + 1}`]: {
+        {
           adultsCount: 2,
           children: [],
         },
-      },
+      ],
     });
   }
 
-  function removeRoom(room: string) {
-    delete guestRooms.rooms[room];
+  function removeRoom(roomIndex: number) {
+    guestRooms.rooms.splice(roomIndex, 1);
 
     setGuestRooms({
       rooms: guestRooms.rooms,

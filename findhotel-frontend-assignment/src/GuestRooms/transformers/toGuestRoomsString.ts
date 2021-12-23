@@ -17,7 +17,7 @@ function toAdultsAndChildrenAgesString({ adultsCount, children }: Room) {
 }
 
 export function toGuestRoomsString(guestRooms: GuestRooms) {
-  return Object.values(guestRooms.rooms)
+  return guestRooms.rooms
     .map(toAdultsAndChildrenAgesString)
     .join(ROOM_SEPARATOR);
 }
