@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, FC, useState } from 'react';
 import { GuestRooms } from '../types/GuestRooms';
 import { toGuestRooms } from '../transformers/toGuestRooms';
 
@@ -27,7 +27,14 @@ const GUEST_ROOMS_DEFAULT = {
   ],
 };
 
-export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
+type GuestRoomsProviderPropTypes = {
+  guestRoomsString?: string;
+};
+
+export const GuestRoomsProvider: FC<GuestRoomsProviderPropTypes> = ({
+  children,
+  guestRoomsString,
+}) => {
   const defaultGuestRooms = guestRoomsString
     ? toGuestRooms(guestRoomsString)
     : GUEST_ROOMS_DEFAULT;
