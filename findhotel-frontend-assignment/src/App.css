@@ -1,2 +1,9 @@
-.App {
+html,
+body {
+  height: 100%;
+}
+
+.App,
+.root {
+  height: 100%;
 }

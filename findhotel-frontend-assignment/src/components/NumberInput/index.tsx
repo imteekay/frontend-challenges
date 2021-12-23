@@ -1,3 +1,8 @@
+import { css } from '@emotion/css';
+import { Button } from '../Button';
+import { ReactComponent as PlusIcon } from '../Icons/plus.svg';
+import { ReactComponent as MinusIcon } from '../Icons/minus.svg';
+
 export const NumberInput = ({
   value,
   increaseValue,
@@ -14,15 +19,41 @@ export const NumberInput = ({
   const decreaseNumber = () => isAbleToDecreaseValue && decreaseValue();
   const increaseNumber = () => isAbleToIncreaseValue && increaseValue();
 
+  const decreaseButtonVariant = isDecreaseDisabled ? 'disabled' : 'secondary';
+  const increaseButtonVariant = isIncreaseDisabled ? 'disabled' : 'secondary';
+
   return (
-    <>
-      <button disabled={isDecreaseDisabled} onClick={decreaseNumber}>
-        -
-      </button>
-      {value}
-      <button disabled={isIncreaseDisabled} onClick={increaseNumber}>
-        +
-      </button>
-    </>
+    <div>
+      <Button
+        disabled={isDecreaseDisabled}
+        onClick={decreaseNumber}
+        variant={decreaseButtonVariant}
+        className={css`
+          padding: 8px;
+          margin-right: 24px;
+        `}
+      >
+        <MinusIcon />
+      </Button>
+      <span
+        className={css`
+          width: 10px;
+          display: inline-block;
+        `}
+      >
+        {value}
+      </span>
+      <Button
+        disabled={isIncreaseDisabled}
+        onClick={increaseNumber}
+        variant={increaseButtonVariant}
+        className={css`
+          padding: 8px;
+          margin-left: 24px;
+        `}
+      >
+        <PlusIcon />
+      </Button>
+    </div>
   );
 };

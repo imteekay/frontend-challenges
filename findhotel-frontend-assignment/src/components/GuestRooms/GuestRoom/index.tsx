@@ -1,46 +1,72 @@
-import { ChangeEvent, useContext } from 'react';
+import { useContext } from 'react';
+import { css } from '@emotion/css';
+import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
+import { Button } from '../../Button';
 import { AdultsCountInput } from '../AdultsCountInput';
 import { ChildrenCountInput } from '../ChildrenCountInput';
-import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
+import { ChildrenSelect } from '../ChildrenSelect';
 
-const ageOptions = [...Array(18)];
+const roomTitleWrapperStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+`;
 
-export const GuestRoom = ({ room = 'Room 1' }) => {
-  const { getChildren, updateChild, removeChild } =
-    useContext(GuestRoomsContext);
+const roomTitleStyle = css`
+  font-size: 18px;
+  font-weight: 600;
+`;
 
-  const chidren = getChildren(room);
+const countInputStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+`;
 
-  const childAgeOnChange =
-    (childIndex: number) => (event: ChangeEvent<HTMLSelectElement>) => {
-      const childAge = Number(event.target.value);
-      updateChild(room, childIndex, childAge);
-    };
+const childrenCountInputStyle = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+`;
 
-  const removeOnClick = (childIndex: number) => () => {
-    removeChild(room, childIndex);
+const removeButtonStyle = css`
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+export const GuestRoom = ({ room = 'Room 1', index }) => {
+  const { removeRoom } = useContext(GuestRoomsContext);
+  const removeRoomOnClick = (room: string) => () => {
+    removeRoom(room);
   };
 
   return (
     <>
-      <AdultsCountInput room={room} />
-      <ChildrenCountInput room={room} />
-
-      {chidren.map((child, index) => (
-        <div key={`${room}-child-${index}`}>
-          <select onChange={childAgeOnChange(index)} value={child.age}>
-            {ageOptions.map((_, age) => (
-              <option
-                value={age}
-                key={`${room}-child-${index}-age-option-${age}`}
-              >
-                {age ? age : '<1'}
-              </option>
-            ))}
-          </select>
-          <button onClick={removeOnClick(index)}>X</button>
-        </div>
-      ))}
+      <div className={roomTitleWrapperStyle}>
+        <h2 className={roomTitleStyle}>{room}</h2>
+        {index ? (
+          <Button
+            variant="danger"
+            onClick={removeRoomOnClick(room)}
+            className={removeButtonStyle}
+          >
+            Remove room
+          </Button>
+        ) : null}
+      </div>
+      <div className={countInputStyle}>
+        <span>Adults</span>
+        <AdultsCountInput room={room} />
+      </div>
+      <div className={childrenCountInputStyle}>
+        <span>Children</span>
+        <ChildrenCountInput room={room} />
+      </div>
+      <ChildrenSelect room={room} />
     </>
   );
 };
