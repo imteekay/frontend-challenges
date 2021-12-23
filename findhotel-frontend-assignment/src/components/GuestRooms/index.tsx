@@ -7,6 +7,7 @@ import { css } from '@emotion/css';
 const guestRoomsWrapperClassName = css`
   overflow-y: scroll;
   padding: 16px 16px 80px;
+  flex-grow: 1;
 `;
 
 const roomWrapperClassName = css`

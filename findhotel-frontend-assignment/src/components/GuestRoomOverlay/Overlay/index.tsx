@@ -19,7 +19,6 @@ const modelClassName = css`
   display: flex;
   flex-direction: column;
   height: unset;
-  border-radius: 6px;
   background-color: white;
   position: fixed;
   inset: 0px;
@@ -36,6 +35,7 @@ const modelClassName = css`
     top: 15%;
     max-height: 65%;
     animation: none;
+    border-radius: 6px;
   }
 
   ${mediaQuery['md']} {

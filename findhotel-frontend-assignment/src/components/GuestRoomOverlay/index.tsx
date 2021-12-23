@@ -9,7 +9,7 @@ type GuestRoomOverlayPropTypes = {
 };
 
 export const GuestRoomOverlay: FC<GuestRoomOverlayPropTypes> = ({
-  guestRoomsString = '1:0,13,16',
+  guestRoomsString,
   onClose,
   open = false,
 }) =>
