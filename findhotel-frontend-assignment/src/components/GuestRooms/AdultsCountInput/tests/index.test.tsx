@@ -4,7 +4,7 @@ import { AdultsCountInput } from '..';
 import { GuestRoomsProvider } from '../../../../GuestRooms/contexts/GuestRoomsContext';
 
 describe('AdultsCountInput', () => {
-  it('renders the button', () => {
+  it('increases and decreases count by clicking buttons', () => {
     render(
       <GuestRoomsProvider>
         <AdultsCountInput roomIndex={0} />
