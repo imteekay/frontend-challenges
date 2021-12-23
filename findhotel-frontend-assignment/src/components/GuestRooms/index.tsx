@@ -1,8 +1,9 @@
 import { useContext } from 'react';
+import { css } from '@emotion/css';
 import { GuestRoom } from './GuestRoom';
 import { GuestRoomsContext } from '../../GuestRooms/contexts/GuestRoomsContext';
 import { Button } from '../Button';
-import { css } from '@emotion/css';
+import { getRooms } from '../../GuestRooms/contexts/getters';
 
 const guestRoomsWrapperStyle = css`
   overflow-y: scroll;
@@ -16,8 +17,8 @@ const roomWrapperStyle = css`
 `;
 
 export const GuestRooms = () => {
-  const { getRooms, addRoom } = useContext(GuestRoomsContext);
-  const rooms = getRooms();
+  const { guestRooms, addRoom } = useContext(GuestRoomsContext);
+  const rooms = getRooms(guestRooms);
 
   return (
     <div className={guestRoomsWrapperStyle}>

@@ -1,13 +1,8 @@
 import { createContext, useState } from 'react';
-import { GuestRooms, Room, Child } from '../types/GuestRooms';
+import { GuestRooms } from '../types/GuestRooms';
 import { toGuestRooms } from '../transformers/toGuestRooms';
 
 type GuestRoomsValues = {
-  getAdultsCount: (roomIndex: number) => number;
-  getChildrenCount: (roomIndex: number) => number;
-  getGuestsCount: () => number;
-  getChildren: (roomIndex: number) => Child[];
-  getRooms: () => Room[];
   updateAdultsCount: (roomIndex: number, count: number) => void;
   updateChild: (
     roomIndex: number,
@@ -38,30 +33,6 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
     : GUEST_ROOMS_DEFAULT;
 
   const [guestRooms, setGuestRooms] = useState<GuestRooms>(defaultGuestRooms);
-
-  function getAdultsCount(roomIndex: number) {
-    return guestRooms.rooms[roomIndex].adultsCount;
-  }
-
-  function getChildrenCount(roomIndex: number) {
-    return guestRooms.rooms[roomIndex].children.length;
-  }
-
-  function getGuestsCount() {
-    return guestRooms.rooms.reduce(
-      (guestsCount, room) =>
-        guestsCount + room.adultsCount + room.children.length,
-      0
-    );
-  }
-
-  function getChildren(roomIndex: number) {
-    return guestRooms.rooms[roomIndex].children;
-  }
-
-  function getRooms() {
-    return guestRooms.rooms;
-  }
 
   function updateAdultsCount(roomIndex: number, count: number) {
     guestRooms.rooms[roomIndex] = {
@@ -139,11 +110,6 @@ export const GuestRoomsProvider = ({ children, guestRoomsString }) => {
   }
 
   const providerValue = {
-    getAdultsCount,
-    getChildrenCount,
-    getGuestsCount,
-    getChildren,
-    getRooms,
     updateAdultsCount,
     updateChild,
     addChild,

@@ -2,6 +2,7 @@ import { ChangeEvent, useContext } from 'react';
 import { css } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { CloseButton } from '../CloseButton';
+import { getChildren } from '../../../GuestRooms/contexts/getters';
 
 type ChildrenSelectPropTypes = {
   roomIndex: number;
@@ -56,8 +57,8 @@ const selectStyle = css`
 `;
 
 export const ChildrenSelect = ({ roomIndex }: ChildrenSelectPropTypes) => {
-  const { getChildren, updateChild } = useContext(GuestRoomsContext);
-  const chidren = getChildren(roomIndex);
+  const { guestRooms, updateChild } = useContext(GuestRoomsContext);
+  const chidren = getChildren(guestRooms, roomIndex);
 
   const childAgeOnChange =
     (childIndex: number) => (event: ChangeEvent<HTMLSelectElement>) => {

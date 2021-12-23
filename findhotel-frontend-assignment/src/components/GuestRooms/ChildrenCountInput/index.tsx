@@ -1,6 +1,7 @@
 import { FC, useContext } from 'react';
 import { NumberInput } from '../../NumberInput';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
+import { getChildrenCount } from '../../../GuestRooms/contexts/getters';
 
 type ChildrenCountInputPropTypes = {
   roomIndex: number;
@@ -9,10 +10,8 @@ type ChildrenCountInputPropTypes = {
 export const ChildrenCountInput: FC<ChildrenCountInputPropTypes> = ({
   roomIndex,
 }) => {
-  const { getChildrenCount, addChild, removeChild } =
-    useContext(GuestRoomsContext);
-
-  const childrenCount = getChildrenCount(roomIndex);
+  const { guestRooms, addChild, removeChild } = useContext(GuestRoomsContext);
+  const childrenCount = getChildrenCount(guestRooms, roomIndex);
 
   const increaseValue = () => addChild(roomIndex);
   const decreaseValue = () => removeChild(roomIndex);
