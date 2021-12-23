@@ -47,7 +47,7 @@ export const GuestRoom = ({ index }) => {
   return (
     <>
       <div className={roomTitleWrapperStyle}>
-        <h2 className={roomTitleStyle}>Room {index}</h2>
+        <h2 className={roomTitleStyle}>Room {index + 1}</h2>
         {index ? (
           <Button
             variant="danger"
