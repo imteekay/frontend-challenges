@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { css, keyframes } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { toGuestRoomsString } from '../../../GuestRooms/transformers/toGuestRoomsString';
 import { Button } from '../../Button';
 import { mediaQuery } from '../../../base/mediaQuery';
 import { getGuestsCount, getRooms } from '../../../GuestRooms/contexts/getters';
+import { GuestRooms } from '../../../GuestRooms/types/GuestRooms';
+import { OnSearchFunction } from '..';
 
 function getRoomsCountText(roomsCount: number) {
   return roomsCount > 1 ? `${roomsCount} rooms` : `${roomsCount} room`;
@@ -14,16 +16,11 @@ function getGuestsCountText(guestsCount: number) {
   return guestsCount > 1 ? `${guestsCount} guests` : `${guestsCount} guest`;
 }
 
-function getPushState() {
-  return (state, url: string) => window.history.pushState(state, '', url);
-}
-
-function search(guestRooms) {
-  const pushState = getPushState();
+function search(guestRooms: GuestRooms, callback: OnSearchFunction) {
   const guestRoomsString = toGuestRoomsString(guestRooms);
 
   return () =>
-    pushState(
+    callback(
       { guestRooms: guestRoomsString },
       `?guestRooms="${guestRoomsString}"`
     );
@@ -53,7 +50,11 @@ const buttonWrapperStyle = css`
   }
 `;
 
-export const SearchButton = () => {
+type SearchButtonPropTypes = {
+  onSearch?: OnSearchFunction;
+};
+
+export const SearchButton: FC<SearchButtonPropTypes> = ({ onSearch }) => {
   const { guestRooms } = useContext(GuestRoomsContext);
   const rooms = getRooms(guestRooms);
   const roomsCountText = getRoomsCountText(rooms.length);
@@ -62,7 +63,7 @@ export const SearchButton = () => {
 
   return (
     <div className={buttonWrapperStyle}>
-      <Button onClick={search(guestRooms)} fullWidth>
+      <Button onClick={search(guestRooms, onSearch)} fullWidth>
         Search {roomsCountText} • {guestsCountText}
       </Button>
     </div>

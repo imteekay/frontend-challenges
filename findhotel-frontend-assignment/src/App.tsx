@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GuestRoomOverlay } from './components/GuestRoomOverlay';
+import { pushState } from './base/pushState';
 import './App.css';
 
 function App() {
@@ -10,7 +11,11 @@ function App() {
   return (
     <div className="App">
       <button onClick={openOverlay}>Open</button>
-      <GuestRoomOverlay onClose={closeOverlay} open={open} />
+      <GuestRoomOverlay
+        onClose={closeOverlay}
+        open={open}
+        onSearch={pushState}
+      />
     </div>
   );
 }

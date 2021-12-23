@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { css } from '@emotion/css';
 import { BrowserView } from 'react-device-detect';
 import { Overlay } from '../Overlay';
+import { OnSearchFunction } from '..';
 
 const overlayStyle = css`
   inset: 0px;
@@ -25,16 +26,22 @@ const backdropStyle = css`
 type OverlayBrowserViewPropTypes = {
   guestRoomsString?: string;
   onClose: () => void;
+  onSearch?: OnSearchFunction;
 };
 
 export const OverlayBrowserView: FC<OverlayBrowserViewPropTypes> = ({
   guestRoomsString,
   onClose,
+  onSearch,
 }) => (
   <BrowserView>
     <div className={overlayStyle}>
       <div onClick={onClose} className={backdropStyle} />
-      <Overlay guestRoomsString={guestRoomsString} onClose={onClose} />
+      <Overlay
+        guestRoomsString={guestRoomsString}
+        onClose={onClose}
+        onSearch={onSearch}
+      />
     </div>
   </BrowserView>
 );

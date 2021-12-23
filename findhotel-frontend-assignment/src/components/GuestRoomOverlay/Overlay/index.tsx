@@ -5,6 +5,7 @@ import { GuestRoomsProvider } from '../../../GuestRooms/contexts/GuestRoomsConte
 import { SearchButton } from '../SearchButton';
 import { Header } from '../Header';
 import { mediaQuery } from '../../../base/mediaQuery';
+import { OnSearchFunction } from '..';
 
 const overlayFade = keyframes`
   from {
@@ -50,17 +51,19 @@ const modelStyle = css`
 type OverlayPropTypes = {
   guestRoomsString?: string;
   onClose: () => void;
+  onSearch?: OnSearchFunction;
 };
 
 export const Overlay: FC<OverlayPropTypes> = ({
   guestRoomsString,
   onClose,
+  onSearch,
 }) => (
   <GuestRoomsProvider guestRoomsString={guestRoomsString}>
     <div className={modelStyle}>
       <Header onClose={onClose} />
       <GuestRooms />
-      <SearchButton />
+      <SearchButton onSearch={onSearch} />
     </div>
   </GuestRoomsProvider>
 );
