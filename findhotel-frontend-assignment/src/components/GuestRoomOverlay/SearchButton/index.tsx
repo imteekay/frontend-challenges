@@ -4,6 +4,7 @@ import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContex
 import { toGuestRoomsString } from '../../../GuestRooms/transformers/toGuestRoomsString';
 import { Button } from '../../Button';
 import { mediaQuery } from '../../../base/mediaQuery';
+import { getGuestsCount, getRooms } from '../../../GuestRooms/contexts/getters';
 
 function getRoomsCountText(roomsCount: number) {
   return roomsCount > 1 ? `${roomsCount} rooms` : `${roomsCount} room`;
@@ -53,12 +54,10 @@ const buttonWrapperStyle = css`
 `;
 
 export const SearchButton = () => {
-  const { guestRooms, getRooms, getGuestsCount } =
-    useContext(GuestRoomsContext);
-
-  const rooms = getRooms();
+  const { guestRooms } = useContext(GuestRoomsContext);
+  const rooms = getRooms(guestRooms);
   const roomsCountText = getRoomsCountText(rooms.length);
-  const guestsCount = getGuestsCount();
+  const guestsCount = getGuestsCount(guestRooms);
   const guestsCountText = getGuestsCountText(guestsCount);
 
   return (

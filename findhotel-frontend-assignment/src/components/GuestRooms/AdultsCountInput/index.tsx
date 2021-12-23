@@ -1,13 +1,20 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { NumberInput } from '../../NumberInput';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
+import { getAdultsCount } from '../../../GuestRooms/contexts/getters';
 
-export const AdultsCountInput = ({ room = 'Room 1' }) => {
-  const { getAdultsCount, updateAdultsCount } = useContext(GuestRoomsContext);
-  const adultsCount = getAdultsCount(room);
+type AdultsCountInputPropTypes = {
+  roomIndex: number;
+};
 
-  const increaseValue = () => updateAdultsCount(room, adultsCount + 1);
-  const decreaseValue = () => updateAdultsCount(room, adultsCount - 1);
+export const AdultsCountInput: FC<AdultsCountInputPropTypes> = ({
+  roomIndex,
+}) => {
+  const { guestRooms, updateAdultsCount } = useContext(GuestRoomsContext);
+  const adultsCount = getAdultsCount(guestRooms, roomIndex);
+
+  const increaseValue = () => updateAdultsCount(roomIndex, adultsCount + 1);
+  const decreaseValue = () => updateAdultsCount(roomIndex, adultsCount - 1);
 
   return (
     <NumberInput

@@ -5,15 +5,15 @@ import { Button } from '../../Button';
 import { ReactComponent as CloseIcon } from '../../Icons/close.svg';
 
 type CloseButtonPropTypes = {
-  room: string;
+  roomIndex: number;
   index: number;
 };
 
-export const CloseButton: FC<CloseButtonPropTypes> = ({ room, index }) => {
+export const CloseButton: FC<CloseButtonPropTypes> = ({ roomIndex, index }) => {
   const { removeChild } = useContext(GuestRoomsContext);
 
   const removeOnClick = (childIndex: number) => () => {
-    removeChild(room, childIndex);
+    removeChild(roomIndex, childIndex);
   };
 
   return (
