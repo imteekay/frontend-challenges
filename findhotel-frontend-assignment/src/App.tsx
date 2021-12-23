@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { css } from '@emotion/css';
 import { GuestRoomOverlay } from './components/GuestRoomOverlay';
 import { pushState } from './base/pushState';
 import './App.css';
@@ -10,7 +11,17 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={openOverlay}>Open</button>
+      <div
+        className={css`
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+        `}
+      >
+        <button onClick={openOverlay}>Open</button>
+      </div>
       <GuestRoomOverlay
         onClose={closeOverlay}
         open={open}
