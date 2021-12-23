@@ -1,8 +1,9 @@
 import { useContext } from 'react';
-import { css } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { toGuestRoomsString } from '../../../GuestRooms/transformers/toGuestRoomsString';
 import { Button } from '../../Button';
+import { mediaQuery } from '../../../base/mediaQuery';
 
 function getRoomsCountText(roomsCount: number) {
   return roomsCount > 1 ? `${roomsCount} rooms` : `${roomsCount} room`;
@@ -27,6 +28,30 @@ function search(guestRooms) {
     );
 }
 
+const overlayFade = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const buttonWrapperClassName = css`
+  padding: 16px;
+  position: sticky;
+  bottom: 0;
+
+  animation-name: ${overlayFade};
+  animation-duration: 0.9s;
+
+  ${mediaQuery['sm']} {
+    position: inherit;
+    border-top: 1px solid #eff2f6;
+    animation: none;
+  }
+`;
+
 export const SearchButton = () => {
   const { guestRooms, getRooms, getGuestsCount } =
     useContext(GuestRoomsContext);
@@ -37,12 +62,7 @@ export const SearchButton = () => {
   const guestsCountText = getGuestsCountText(guestsCount);
 
   return (
-    <div
-      className={css`
-        padding: 16px;
-        border-top: 1px solid #eff2f6;
-      `}
-    >
+    <div className={buttonWrapperClassName}>
       <Button onClick={search(guestRooms)} fullWidth>
         Search {roomsCountText} • {guestsCountText}
       </Button>

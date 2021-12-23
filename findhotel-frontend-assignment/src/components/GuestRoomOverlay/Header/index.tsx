@@ -2,31 +2,64 @@ import { FC } from 'react';
 import { css } from '@emotion/css';
 import { Button } from '../../Button';
 import { ReactComponent as CloseIcon } from '../../Icons/close.svg';
+import { mediaQuery } from '../../../base/mediaQuery';
 
 type HeaderPropTypes = {
   onClose: () => void;
 };
 
 const headerWrapperClassName = css`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: rgb(42 51 61 / 20%) 0px 1px 4px 0px,
+    rgb(42 51 61 / 8%) 0px 0px 1px 0px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 20px 16px;
-  border-bottom: 1px solid #eff2f6;
+
+  ${mediaQuery['sm']} {
+    border-bottom: 1px solid #eff2f6;
+    box-shadow: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    justify-content: space-between;
+  }
 `;
 
 const headerClassName = css`
   font-weight: 700;
-  font-size: 21px;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  ${mediaQuery['sm']} {
+    font-size: 21px;
+    justify-content: space-between;
+  }
 `;
 
 const buttonClassName = css`
   padding: 0;
+  position: absolute;
+  top: 16px;
+  left: 12px;
+
+  ${mediaQuery['sm']} {
+    position: relative;
+    top: inherit;
+    left: inherit;
+  }
 `;
 
 export const Header: FC<HeaderPropTypes> = ({ onClose }) => (
   <div className={headerWrapperClassName}>
-    <header className={headerClassName}>Rooms & Guests</header>
+    <div className={headerClassName}>
+      <span>Rooms & Guests</span>
+    </div>
     <Button variant="close" onClick={onClose} className={buttonClassName}>
       <CloseIcon />
     </Button>
