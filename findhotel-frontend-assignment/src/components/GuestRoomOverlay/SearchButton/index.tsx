@@ -37,7 +37,7 @@ const overlayFade = keyframes`
   }
 `;
 
-const buttonWrapperClassName = css`
+const buttonWrapperStyle = css`
   padding: 16px;
   position: sticky;
   bottom: 0;
@@ -62,7 +62,7 @@ export const SearchButton = () => {
   const guestsCountText = getGuestsCountText(guestsCount);
 
   return (
-    <div className={buttonWrapperClassName}>
+    <div className={buttonWrapperStyle}>
       <Button onClick={search(guestRooms)} fullWidth>
         Search {roomsCountText} • {guestsCountText}
       </Button>

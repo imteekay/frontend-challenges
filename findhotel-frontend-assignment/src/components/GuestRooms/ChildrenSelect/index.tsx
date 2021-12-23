@@ -24,12 +24,12 @@ const childAgeSelectWrapper = css`
   font-size: 15px;
 `;
 
-const selectWrapperClassName = css`
+const selectWrapperStyle = css`
   width: 130px;
   display: flex;
 `;
 
-const selectClassName = css`
+const selectStyle = css`
   width: 100%;
   display: inline-flex;
   background: rgb(255, 255, 255);
@@ -70,14 +70,11 @@ export const ChildrenSelect = ({ room }: ChildrenSelectPropTypes) => {
       {chidren.map((child, index) => (
         <div className={childAgeSelectWrapper}>
           <span>Child {index} age</span>
-          <div
-            key={`${room}-child-${index}`}
-            className={selectWrapperClassName}
-          >
+          <div key={`${room}-child-${index}`} className={selectWrapperStyle}>
             <select
               onChange={childAgeOnChange(index)}
               value={child.age}
-              className={selectClassName}
+              className={selectStyle}
             >
               {ageOptions.map((_, age) => (
                 <option

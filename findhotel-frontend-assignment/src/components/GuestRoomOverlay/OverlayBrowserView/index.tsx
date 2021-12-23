@@ -3,13 +3,13 @@ import { css } from '@emotion/css';
 import { BrowserView } from 'react-device-detect';
 import { Overlay } from '../Overlay';
 
-const overlayClassName = css`
+const overlayStyle = css`
   inset: 0px;
   position: fixed;
   z-index: 111;
 `;
 
-const backdropClassName = css`
+const backdropStyle = css`
   top: 0px;
   left: 0px;
   width: 100%;
@@ -32,8 +32,8 @@ export const OverlayBrowserView: FC<OverlayBrowserViewPropTypes> = ({
   onClose,
 }) => (
   <BrowserView>
-    <div className={overlayClassName}>
-      <div onClick={onClose} className={backdropClassName} />
+    <div className={overlayStyle}>
+      <div onClick={onClose} className={backdropStyle} />
       <Overlay guestRoomsString={guestRoomsString} onClose={onClose} />
     </div>
   </BrowserView>

@@ -15,7 +15,7 @@ const overlayFade = keyframes`
   }
 `;
 
-const modelClassName = css`
+const modelStyle = css`
   display: flex;
   flex-direction: column;
   height: unset;
@@ -57,7 +57,7 @@ export const Overlay: FC<OverlayPropTypes> = ({
   onClose,
 }) => (
   <GuestRoomsProvider guestRoomsString={guestRoomsString}>
-    <div className={modelClassName}>
+    <div className={modelStyle}>
       <Header onClose={onClose} />
       <GuestRooms />
       <SearchButton />

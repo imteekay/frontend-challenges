@@ -4,13 +4,13 @@ import { GuestRoomsContext } from '../../GuestRooms/contexts/GuestRoomsContext';
 import { Button } from '../Button';
 import { css } from '@emotion/css';
 
-const guestRoomsWrapperClassName = css`
+const guestRoomsWrapperStyle = css`
   overflow-y: scroll;
   padding: 16px 16px 80px;
   flex-grow: 1;
 `;
 
-const roomWrapperClassName = css`
+const roomWrapperStyle = css`
   border-bottom: 1px solid #eff2f6;
   margin-bottom: 16px;
 `;
@@ -20,9 +20,9 @@ export const GuestRooms = () => {
   const rooms = getRooms();
 
   return (
-    <div className={guestRoomsWrapperClassName}>
+    <div className={guestRoomsWrapperStyle}>
       {rooms.map((room, index) => (
-        <div key={room} className={roomWrapperClassName}>
+        <div key={room} className={roomWrapperStyle}>
           <GuestRoom room={room} index={index} />
         </div>
       ))}

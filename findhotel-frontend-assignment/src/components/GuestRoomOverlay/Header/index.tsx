@@ -8,7 +8,7 @@ type HeaderPropTypes = {
   onClose: () => void;
 };
 
-const headerWrapperClassName = css`
+const headerWrapperStyle = css`
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -28,7 +28,7 @@ const headerWrapperClassName = css`
   }
 `;
 
-const headerClassName = css`
+const headerStyle = css`
   font-weight: 700;
   font-size: 16px;
   display: flex;
@@ -42,7 +42,7 @@ const headerClassName = css`
   }
 `;
 
-const buttonClassName = css`
+const buttonStyle = css`
   padding: 0;
   position: absolute;
   top: 16px;
@@ -56,11 +56,11 @@ const buttonClassName = css`
 `;
 
 export const Header: FC<HeaderPropTypes> = ({ onClose }) => (
-  <div className={headerWrapperClassName}>
-    <div className={headerClassName}>
+  <div className={headerWrapperStyle}>
+    <div className={headerStyle}>
       <span>Rooms & Guests</span>
     </div>
-    <Button variant="close" onClick={onClose} className={buttonClassName}>
+    <Button variant="close" onClick={onClose} className={buttonStyle}>
       <CloseIcon />
     </Button>
   </div>
