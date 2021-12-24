@@ -16,13 +16,13 @@ function selectAdultsCount() {
   const adultsBlock = 'div[data-testid="adults-count-input-block"]';
 
   cy.get(adultsBlock).within(() => {
-    cy.contains('2');
+    cy.contains('2').should('exist');
 
     const adultsMinusButton = cy.get('button[data-testid="minus-button"]');
 
     adultsMinusButton.click();
     adultsMinusButton.should('be.disabled');
-    cy.contains('1');
+    cy.contains('1').should('exist');
 
     const adultsPlusButton = cy
       .get('button[data-testid="plus-button"]')
@@ -31,19 +31,19 @@ function selectAdultsCount() {
     adultsPlusButton.click();
     adultsPlusButton.click();
     adultsPlusButton.click();
-    cy.contains('4');
+    cy.contains('4').should('exist');
   });
 }
 
 function selectChildrenCountAndAges() {
   const childrenBlock = 'div[data-testid="children-count-input-block"]';
   cy.get(childrenBlock).within(() => {
-    cy.contains('0');
+    cy.contains('0').should('exist');
 
     const childrenMinusButton = cy.get('button[data-testid="minus-button"]');
 
     childrenMinusButton.should('be.disabled');
-    cy.contains('0');
+    cy.contains('0').should('exist');
 
     const childrenPlusButton = cy
       .get('button[data-testid="plus-button"]')
@@ -52,7 +52,7 @@ function selectChildrenCountAndAges() {
     childrenPlusButton.click();
     childrenPlusButton.click();
     childrenPlusButton.click();
-    cy.contains('3');
+    cy.contains('3').should('exist');
 
     cy.contains('Child 1 age');
     cy.contains('Child 2 age');
@@ -86,7 +86,7 @@ function verifyGuestRoomsBehavior() {
 
   cy.contains('Room 2').should('not.exist');
   cy.get('button').contains('+ Add room').click();
-  cy.contains('Room 2');
+  cy.contains('Room 2').should('exist');
 
   const secondRoom = 'div[data-testid="room-key-1"]';
 
@@ -107,6 +107,12 @@ function verifyGuestRoomsBehavior() {
   );
 }
 
+function verifyCloseButtonBehavior() {
+  cy.contains('Rooms & Guests').should('exist');
+  cy.get('button[data-testid="overlay-close-button"]').click();
+  cy.contains('Rooms & Guests').should('not.exist');
+}
+
 describe('GuestRoomsOverlay', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -116,12 +122,14 @@ describe('GuestRoomsOverlay', () => {
     it('verifies guest rooms overlay behavior', () => {
       cy.viewport('iphone-x');
       verifyGuestRoomsBehavior();
+      verifyCloseButtonBehavior();
     });
   });
 
   describe('on desktop', () => {
     it('verifies guest rooms overlay behavior', () => {
       verifyGuestRoomsBehavior();
+      verifyCloseButtonBehavior();
     });
   });
 });
