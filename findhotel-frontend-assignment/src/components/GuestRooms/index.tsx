@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { css } from '@emotion/css';
 import { GuestRoom } from './GuestRoom';
 import { GuestRoomsContext } from '../../GuestRooms/contexts/GuestRoomsContext';
@@ -16,7 +16,7 @@ const roomWrapperStyle = css`
   margin-bottom: 16px;
 `;
 
-export const GuestRooms = () => {
+export const GuestRooms: FC = () => {
   const { guestRooms, addRoom } = useContext(GuestRoomsContext);
   const rooms = getRooms(guestRooms);
 

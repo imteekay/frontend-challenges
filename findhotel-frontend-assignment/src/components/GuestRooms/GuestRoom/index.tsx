@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { FC, useContext } from 'react';
 import { css } from '@emotion/css';
 import { GuestRoomsContext } from '../../../GuestRooms/contexts/GuestRoomsContext';
 import { Button } from '../../Button';
@@ -38,7 +38,11 @@ const removeButtonStyle = css`
   font-weight: 600;
 `;
 
-export const GuestRoom = ({ index }) => {
+type GuestRoomPropTypes = {
+  index: number;
+};
+
+export const GuestRoom: FC<GuestRoomPropTypes> = ({ index }) => {
   const { removeRoom } = useContext(GuestRoomsContext);
   const removeRoomOnClick = (roomIndex: number) => () => {
     removeRoom(roomIndex);
