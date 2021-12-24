@@ -62,15 +62,17 @@ export const GuestRoom: FC<GuestRoomPropTypes> = ({ index }) => {
           </Button>
         ) : null}
       </div>
-      <div className={countInputStyle}>
+      <div className={countInputStyle} data-testid="adults-count-input-block">
         <span>Adults</span>
         <AdultsCountInput roomIndex={index} />
       </div>
-      <div className={childrenCountInputStyle}>
-        <span>Children</span>
-        <ChildrenCountInput roomIndex={index} />
+      <div data-testid="children-count-input-block">
+        <div className={childrenCountInputStyle}>
+          <span>Children</span>
+          <ChildrenCountInput roomIndex={index} />
+        </div>
+        <ChildrenSelect roomIndex={index} />
       </div>
-      <ChildrenSelect roomIndex={index} />
     </>
   );
 };

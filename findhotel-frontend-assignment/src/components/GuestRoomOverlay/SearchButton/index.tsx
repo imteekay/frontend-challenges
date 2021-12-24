@@ -22,7 +22,7 @@ function search(guestRooms: GuestRooms, callback: OnSearchFunction) {
   return () =>
     callback(
       { guestRooms: guestRoomsString },
-      `?guestRooms="${guestRoomsString}"`
+      `?guestRooms=${guestRoomsString}`
     );
 }
 
