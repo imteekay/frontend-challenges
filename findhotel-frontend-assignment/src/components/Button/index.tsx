@@ -9,6 +9,7 @@ type ButtonPropTypes = {
   variant?: ButtonVariants;
   className?: string;
   fullWidth?: boolean;
+  dataTestid?: string;
 };
 
 const Cursor = {
@@ -58,10 +59,12 @@ export const Button: FC<ButtonPropTypes> = ({
   variant = 'primary',
   className,
   fullWidth = false,
+  dataTestid,
 }) => (
   <button
     disabled={disabled}
     onClick={onClick}
+    data-testid={dataTestid}
     className={css`
       display: inline-flex;
       border: 0px;

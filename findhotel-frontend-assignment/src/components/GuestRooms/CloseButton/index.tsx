@@ -20,6 +20,7 @@ export const CloseButton: FC<CloseButtonPropTypes> = ({ roomIndex, index }) => {
     <Button
       variant="danger"
       onClick={removeOnClick(index)}
+      dataTestid={`close-button-${index}`}
       className={css`
         padding: 8px;
       `}
