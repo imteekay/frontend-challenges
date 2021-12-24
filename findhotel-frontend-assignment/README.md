@@ -4,12 +4,6 @@ Thanks for applying for the Front-end Engineer position at FindHotel!
 
 You can find the instructions [here](INSTRUCTIONS.md)
 
-## The sample project
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.<br />
@@ -33,14 +27,12 @@ type Child = {
 };
 
 type Room = {
-  [room: string]: {
-    adultsCount: number;
-    children: Child[];
-  };
+  adultsCount: number;
+  children: Child[];
 };
 
 type GuestRooms = {
-  rooms: Room;
+  rooms: Room[];
 };
 ```
 
@@ -48,8 +40,8 @@ Example:
 
 ```typescript
 const GuestRooms = {
-  rooms: {
-    room1: {
+  rooms: [
+    {
       adultsCount: 2,
       children: [
         {
@@ -57,7 +49,7 @@ const GuestRooms = {
         },
       ],
     },
-    room2: {
+    {
       adultsCount: 2,
       children: [
         {
@@ -68,6 +60,6 @@ const GuestRooms = {
         },
       ],
     },
-  },
+  ],
 };
 ```
