@@ -23,7 +23,11 @@ export const GuestRooms: FC = () => {
   return (
     <div className={guestRoomsWrapperStyle}>
       {rooms.map((_, index) => (
-        <div key={`room-key-${index}`} className={roomWrapperStyle}>
+        <div
+          key={`room-key-${index}`}
+          className={roomWrapperStyle}
+          data-testid={`room-key-${index}`}
+        >
           <GuestRoom index={index} />
         </div>
       ))}

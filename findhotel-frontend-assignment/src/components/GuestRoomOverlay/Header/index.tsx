@@ -60,7 +60,12 @@ export const Header: FC<HeaderPropTypes> = ({ onClose }) => (
     <div className={headerStyle}>
       <span>Rooms & Guests</span>
     </div>
-    <Button variant="close" onClick={onClose} className={buttonStyle}>
+    <Button
+      variant="close"
+      onClick={onClose}
+      className={buttonStyle}
+      dataTestid="overlay-close-button"
+    >
       <CloseIcon />
     </Button>
   </div>

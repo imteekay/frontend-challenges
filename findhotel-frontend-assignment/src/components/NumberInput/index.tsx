@@ -37,6 +37,7 @@ export const NumberInput: FC<NumberInputPropTypes> = ({
         disabled={isDecreaseDisabled}
         onClick={decreaseNumber}
         variant={decreaseButtonVariant}
+        dataTestid="minus-button"
         className={css`
           padding: 8px;
           margin-right: 24px;
@@ -56,6 +57,7 @@ export const NumberInput: FC<NumberInputPropTypes> = ({
         disabled={isIncreaseDisabled}
         onClick={increaseNumber}
         variant={increaseButtonVariant}
+        dataTestid="plus-button"
         className={css`
           padding: 8px;
           margin-left: 24px;
