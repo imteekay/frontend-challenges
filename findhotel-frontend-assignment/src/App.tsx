@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { css } from '@emotion/css';
 import { GuestRoomOverlay } from './components/GuestRoomOverlay';
 import { pushState } from './base/pushState';
+import { Button } from './components/Button';
 import './App.css';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
           width: 100%;
         `}
       >
-        <button onClick={openOverlay}>Open</button>
+        <Button onClick={openOverlay}>Open</Button>
       </div>
       <GuestRoomOverlay
         onClose={closeOverlay}
