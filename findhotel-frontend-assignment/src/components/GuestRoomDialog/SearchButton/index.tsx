@@ -26,7 +26,7 @@ function search(guestRooms: GuestRooms, callback: OnSearchFunction) {
     );
 }
 
-const overlayFade = keyframes`
+const dialogFade = keyframes`
   from {
     opacity: 0;
   }
@@ -40,7 +40,7 @@ const buttonWrapperStyle = css`
   position: sticky;
   bottom: 0;
 
-  animation-name: ${overlayFade};
+  animation-name: ${dialogFade};
   animation-duration: 0.9s;
 
   ${mediaQuery['sm']} {

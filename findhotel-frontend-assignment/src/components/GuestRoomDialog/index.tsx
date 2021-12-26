@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { OverlayBrowserView } from './OverlayBrowserView';
-import { OverlayMobileView } from './OverlayMobileView';
+import { DialogBrowserView } from './DialogBrowserView';
+import { DialogMobileView } from './DialogMobileView';
 import { PushStateSignature } from '../../base/pushState';
 
 type NoArgumentVoidFunctionSignature = () => void;
@@ -9,14 +9,14 @@ export type OnSearchFunction =
   | PushStateSignature
   | NoArgumentVoidFunctionSignature;
 
-type GuestRoomOverlayPropTypes = {
+type GuestRoomDialogPropTypes = {
   guestRoomsString?: string;
   open: boolean;
   onClose: () => void;
   onSearch?: OnSearchFunction;
 };
 
-export const GuestRoomOverlay: FC<GuestRoomOverlayPropTypes> = ({
+export const GuestRoomDialog: FC<GuestRoomDialogPropTypes> = ({
   guestRoomsString,
   open = false,
   onClose,
@@ -24,12 +24,12 @@ export const GuestRoomOverlay: FC<GuestRoomOverlayPropTypes> = ({
 }) =>
   open ? (
     <>
-      <OverlayBrowserView
+      <DialogBrowserView
         guestRoomsString={guestRoomsString}
         onClose={onClose}
         onSearch={onSearch}
       />
-      <OverlayMobileView
+      <DialogMobileView
         guestRoomsString={guestRoomsString}
         onClose={onClose}
         onSearch={onSearch}

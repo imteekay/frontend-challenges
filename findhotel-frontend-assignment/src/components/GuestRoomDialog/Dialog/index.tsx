@@ -7,7 +7,7 @@ import { Header } from '../Header';
 import { mediaQuery } from '../../../base/mediaQuery';
 import { OnSearchFunction } from '..';
 
-const overlayFade = keyframes`
+const dialogFade = keyframes`
   from {
     top: 100%;
   }
@@ -26,7 +26,7 @@ const modelStyle = css`
   box-shadow: rgb(42 51 61 / 16%) 0px 4px 10px 0px,
     rgb(42 51 61 / 11%) 0px 1px 4px 0px, rgb(42 51 61 / 14%) 0px 0px 1px 0px;
 
-  animation-name: ${overlayFade};
+  animation-name: ${dialogFade};
   animation-duration: 0.3s;
 
   ${mediaQuery['sm']} {
@@ -48,13 +48,13 @@ const modelStyle = css`
   }
 `;
 
-type OverlayPropTypes = {
+type DialogPropTypes = {
   guestRoomsString?: string;
   onClose: () => void;
   onSearch?: OnSearchFunction;
 };
 
-export const Overlay: FC<OverlayPropTypes> = ({
+export const Dialog: FC<DialogPropTypes> = ({
   guestRoomsString,
   onClose,
   onSearch,
