@@ -6,7 +6,7 @@ import { Button } from '../../Button';
 import { mediaQuery } from '../../../base/mediaQuery';
 import { getGuestsCount, getRooms } from '../../../GuestRooms/contexts/getters';
 import { GuestRooms } from '../../../GuestRooms/types/GuestRooms';
-import { OnSearchFunction } from '..';
+import { OnSearchFunction } from '../GuestRoomDialog';
 
 function getRoomsCountText(roomsCount: number) {
   return roomsCount > 1 ? `${roomsCount} rooms` : `${roomsCount} room`;
