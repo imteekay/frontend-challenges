@@ -5,7 +5,7 @@ import { GuestRoomsProvider } from '../../../GuestRooms/contexts/GuestRoomsConte
 import { SearchButton } from '../SearchButton';
 import { Header } from '../Header';
 import { mediaQuery } from '../../../base/mediaQuery';
-import { OnSearchFunction } from '..';
+import { OnSearchFunction } from '../GuestRoomDialog';
 
 const dialogFade = keyframes`
   from {

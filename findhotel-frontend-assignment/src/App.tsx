@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { css } from '@emotion/css';
-import { GuestRoomDialog } from './components/GuestRoomDialog';
+import GuestRoomDialog from './components/GuestRoomDialog';
 import { pushState } from './base/pushState';
 import { Button } from './components/Button';
 import './App.css';
