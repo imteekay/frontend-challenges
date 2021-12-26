@@ -1,21 +1,21 @@
 import { FC } from 'react';
 import { MobileView } from 'react-device-detect';
-import { Overlay } from '../Overlay';
+import { Dialog } from '../Dialog';
 import { OnSearchFunction } from '..';
 
-type OverlayMobileViewPropTypes = {
+type DialogMobileViewPropTypes = {
   guestRoomsString?: string;
   onClose: () => void;
   onSearch?: OnSearchFunction;
 };
 
-export const OverlayMobileView: FC<OverlayMobileViewPropTypes> = ({
+export const DialogMobileView: FC<DialogMobileViewPropTypes> = ({
   guestRoomsString,
   onClose,
   onSearch,
 }) => (
   <MobileView>
-    <Overlay
+    <Dialog
       guestRoomsString={guestRoomsString}
       onClose={onClose}
       onSearch={onSearch}

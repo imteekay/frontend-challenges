@@ -64,7 +64,7 @@ export const Header: FC<HeaderPropTypes> = ({ onClose }) => (
       variant="close"
       onClick={onClose}
       className={buttonStyle}
-      dataTestid="overlay-close-button"
+      dataTestid="dialog-close-button"
     >
       <CloseIcon />
     </Button>

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { css } from '@emotion/css';
 import { BrowserView } from 'react-device-detect';
-import { Overlay } from '../Overlay';
+import { Dialog } from '../Dialog';
 import { OnSearchFunction } from '..';
 
-const overlayStyle = css`
+const dialogStyle = css`
   inset: 0px;
   position: fixed;
   z-index: 111;
@@ -23,21 +23,21 @@ const backdropStyle = css`
   transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;
 
-type OverlayBrowserViewPropTypes = {
+type DialogBrowserViewPropTypes = {
   guestRoomsString?: string;
   onClose: () => void;
   onSearch?: OnSearchFunction;
 };
 
-export const OverlayBrowserView: FC<OverlayBrowserViewPropTypes> = ({
+export const DialogBrowserView: FC<DialogBrowserViewPropTypes> = ({
   guestRoomsString,
   onClose,
   onSearch,
 }) => (
   <BrowserView>
-    <div className={overlayStyle}>
+    <div className={dialogStyle}>
       <div onClick={onClose} className={backdropStyle} />
-      <Overlay
+      <Dialog
         guestRoomsString={guestRoomsString}
         onClose={onClose}
         onSearch={onSearch}

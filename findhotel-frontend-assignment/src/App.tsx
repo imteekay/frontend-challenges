@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { css } from '@emotion/css';
-import { GuestRoomOverlay } from './components/GuestRoomOverlay';
+import { GuestRoomDialog } from './components/GuestRoomDialog';
 import { pushState } from './base/pushState';
 import { Button } from './components/Button';
 import './App.css';
 
 function App() {
   const [open, setOpen] = useState(false);
-  const openOverlay = () => setOpen(true);
-  const closeOverlay = () => setOpen(false);
+  const openDialog = () => setOpen(true);
+  const closeDialog = () => setOpen(false);
 
   return (
     <div className="App">
@@ -21,13 +21,9 @@ function App() {
           width: 100%;
         `}
       >
-        <Button onClick={openOverlay}>Open</Button>
+        <Button onClick={openDialog}>Open</Button>
       </div>
-      <GuestRoomOverlay
-        onClose={closeOverlay}
-        open={open}
-        onSearch={pushState}
-      />
+      <GuestRoomDialog onClose={closeDialog} open={open} onSearch={pushState} />
     </div>
   );
 }

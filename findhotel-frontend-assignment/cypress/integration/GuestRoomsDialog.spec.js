@@ -37,6 +37,7 @@ function selectAdultsCount() {
 
 function selectChildrenCountAndAges() {
   const childrenBlock = 'div[data-testid="children-count-input-block"]';
+
   cy.get(childrenBlock).within(() => {
     cy.contains('0').should('exist');
 
@@ -66,8 +67,8 @@ function selectChildrenCountAndAges() {
 }
 
 function verifyGuestRoomsBehavior() {
-  const openOverlayButton = cy.get('button');
-  openOverlayButton.click();
+  const openDialogButton = cy.get('button');
+  openDialogButton.click();
 
   clickSearchButtonWithText('Search 1 room • 2 guests').andVerifyQueryParams(
     '?guestRooms=2'
@@ -109,17 +110,17 @@ function verifyGuestRoomsBehavior() {
 
 function verifyCloseButtonBehavior() {
   cy.contains('Rooms & Guests').should('exist');
-  cy.get('button[data-testid="overlay-close-button"]').click();
+  cy.get('button[data-testid="dialog-close-button"]').click();
   cy.contains('Rooms & Guests').should('not.exist');
 }
 
-describe('GuestRoomsOverlay', () => {
+describe('GuestRoomsDialog', () => {
   beforeEach(() => {
     cy.visit('/');
   });
 
   describe('on iPhone X', () => {
-    it('verifies guest rooms overlay behavior', () => {
+    it('verifies guest rooms dialog behavior', () => {
       cy.viewport('iphone-x');
       verifyGuestRoomsBehavior();
       verifyCloseButtonBehavior();
@@ -127,7 +128,7 @@ describe('GuestRoomsOverlay', () => {
   });
 
   describe('on desktop', () => {
-    it('verifies guest rooms overlay behavior', () => {
+    it('verifies guest rooms dialog behavior', () => {
       verifyGuestRoomsBehavior();
       verifyCloseButtonBehavior();
     });
