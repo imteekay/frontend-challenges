@@ -19,47 +19,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Documentation
 
-Data structures
-
-```typescript
-type Child = {
-  age: number;
-};
-
-type Room = {
-  adultsCount: number;
-  children: Child[];
-};
-
-type GuestRooms = {
-  rooms: Room[];
-};
-```
-
-Example:
-
-```typescript
-const GuestRooms = {
-  rooms: [
-    {
-      adultsCount: 2,
-      children: [
-        {
-          age: 4,
-        },
-      ],
-    },
-    {
-      adultsCount: 2,
-      children: [
-        {
-          age: 4,
-        },
-        {
-          age: 10,
-        },
-      ],
-    },
-  ],
-};
-```
+[Frontend Challenges: FindHotel Front-end Engineer Assignment](https://www.iamtk.co/series/frontend-challenges/findhotel-frontend-challenge)
