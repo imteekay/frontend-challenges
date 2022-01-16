@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import hellofreshBox from '../data/hellofreshBox';
+import box from '../data/box';
 
-const useFetchHelloFreshBox = () => {
+const useFetchBox = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setData(hellofreshBox);
+      setData(box);
       setLoading(false);
     }, 1000);
 
@@ -17,4 +17,4 @@ const useFetchHelloFreshBox = () => {
   return { data, loading };
 };
 
-export default useFetchHelloFreshBox;
+export default useFetchBox;

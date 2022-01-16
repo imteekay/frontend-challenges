@@ -12,7 +12,7 @@ const Footer = () => (
       justifyContent="center"
       alignItems="center"
       padding="sm">
-      <Text fontSize="sm">© HelloFresh 2020</Text>
+      <Text fontSize="sm">© FreshFood 2022</Text>
     </Flex>
   </footer>
 );

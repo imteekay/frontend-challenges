@@ -1,20 +1,4 @@
-## OVERVIEW
-
-Welcome, and thank you for applying to HelloFresh. For this step of your hiring journey, we have prepared a coding challenge that will help you to demonstrate your technical skills.
-
-The Recipe Selection Page is the core experience of our digital product. Every week millions of users enter this page to select the recipes they'll receive at their homes.
-
-For this challenge, we want you to get familiar with our day-to-day, so we have provided a minimalistic implementation of our Recipe Selection Page, some of the main components from our Design System, and a set of tasks for you.
-
-Please treat this test as if you were part of a team and you have to tackle this feature request; the change would be reviewed by one of your teammates and would go to production.
-
-## INSTRUCTIONS
-
-1. Clone this repository and install the dependencies using `yarn`
-2. Create a new branch named dev `git checkout -b dev`
-3. Complete the tasks described in this document by applying your solution and committing code.
-4. Once you finish, create a pull request to the master branch of this repository.
-5. After creating your pull request, please send the link via email to the recruiter you're in touch with.
+# Recipe Selection Challenge
 
 ## RECOMMENDATIONS
 
@@ -22,22 +6,7 @@ Please treat this test as if you were part of a team and you have to tackle this
 - We provide you a custom hook, **useFetchMenu**, to simulate data fetching from a remote server. It is a simple timeout function that returns static JSON data.
 - This repository is based on create-react-app, you can use `yarn start` to run the application.
 - **Do not eject** the application.
-- Except for `/src/data/hellofreshBox.js`, feel free to **change any file, variable, or value** to achieve your solution.
-
-### OUR DEVELOPMENT VISION
-
-At Hellofresh we value the best experience for our users as well as our engineers when coding. We consider a good development process one that
-
-- considers people's disabilities and limitations
-- is well documented and has maintainability in mind
-- has a good version control and traceability
-- applies the best standards of javascript
-- considers today's performance requirements
-- is self protected and well tested
-- knows the standards of a theme library
-- applies functional programming to its best
-
-We hope you can share the same vision as we do, as well as showcase your own expertise and knowledge! As well as have fun coding this test!
+- Except for `/src/data/box.js`, feel free to **change any file, variable, or value** to achieve your solution.
 
 ## TASKS
 
@@ -157,25 +126,25 @@ Our grid is implemented through the styled-bootstrap-grid [https://github.com/dr
 
 ## DATA SCHEMA
 
-### HelloFresh Box
+### Box
 
 ```json
 {
-  // HelloFresh box identifier
+  // box identifier
   "id": "5f4e821d531e677602591a9b",
   // Product name
   "productName": "Classic Box",
   // Headline
   "headline": "WEEK OF OCTOBER 12TH'",
-  // Minimum recipes for this HelloFresh box
+  // Minimum recipes for this box
   "min": 3,
-  // Maximum recipes for this HelloFresh box
+  // Maximum recipes for this box
   "max": 8,
   // Base price of every recipe
   "baseRecipePrice": 1798,
-  // Shipping price of this HelloFresh box
+  // Shipping price of this box
   "shippingPrice": 1298,
-  // Array of recipes that the customer can select for this HelloFresh box
+  // Array of recipes that the customer can select for this box
   "recipes": [
     {
       // Recipe identifier
@@ -203,8 +172,8 @@ Our grid is implemented through the styled-bootstrap-grid [https://github.com/dr
 
 ## GLOSSARY
 
-**HelloFresh Box:** the weekly physical box that arrives at your door containing the recipes that you have previously selected. Boxes have boundaries around the minimum and maximum recipes that you can receive.
+**Box:** the weekly physical box that arrives at your door containing the recipes that you have previously selected. Boxes have boundaries around the minimum and maximum recipes that you can receive.
 
-**Recipe:** a combination of ingredients that are cooked together create a HelloFresh recipe; a box can have multiple recipes and multiple items of the same recipe. This way, our customers can cook more portions of the same recipe in case they're throwing a dinner party!
+**Recipe:** a combination of ingredients that are cooked together create a recipe; a box can have multiple recipes and multiple items of the same recipe. This way, our customers can cook more portions of the same recipe in case they're throwing a dinner party!
 
 **Recipe Selection:** the action of adding or removing a recipe from your box based on the configuration from your box and recipe, such as box selection boundaries and recipe selection limit.

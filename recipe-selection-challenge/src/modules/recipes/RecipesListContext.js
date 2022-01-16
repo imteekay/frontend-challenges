@@ -1,12 +1,12 @@
 import React, { createContext, useState, useEffect, useCallback } from 'react';
-import useFetchHelloFreshBox from '../../hooks/useFetchHelloFreshBox';
+import useFetchBox from '../../hooks/useFetchBox';
 import { calculateTotalPrice, parseRawPrice } from './price';
 import { sumSelectedRecipes, isAbleToAdd } from './recipe';
 
 export const RecipesListContext = createContext();
 
 export const RecipesListProvider = ({ children }) => {
-  const { data, loading } = useFetchHelloFreshBox();
+  const { data, loading } = useFetchBox();
   const [numOfSelectedRecipes, setNumOfSelectedRecipes] = useState(0);
   const [recipes, setRecipes] = useState([]);
 
