@@ -2,4 +2,4 @@
 
 ## Challenges
 
-- [FindHotel Frontend Assignment](./findhotel-frontend-assignment)
+- [Frontend Assignment](./findhotel-frontend-assignment)
