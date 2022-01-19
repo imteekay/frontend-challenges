@@ -1,6 +1,4 @@
-# FindHotel Front-end Engineer Assignment
-
-Thanks for applying for the Front-end Engineer position at FindHotel!
+# Front-end Engineer Assignment
 
 You can find the instructions [here](INSTRUCTIONS.md)
 
@@ -19,4 +17,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Documentation
 
-[Frontend Challenges: FindHotel Front-end Engineer Assignment](https://www.iamtk.co/series/frontend-challenges/findhotel-frontend-challenge)
+[Frontend Challenges: Front-end Engineer Assignment](https://www.iamtk.co/series/frontend-challenges/findhotel-frontend-challenge)
