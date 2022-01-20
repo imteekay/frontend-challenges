@@ -2,4 +2,4 @@
 
 ## Challenges
 
-- [Frontend Assignment](./findhotel-frontend-assignment)
+- [Front-end Engineer Assignment: Guest Picker](./guest-picker)

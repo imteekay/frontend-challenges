@@ -1,4 +1,4 @@
-# Front-end Engineer Assignment
+# Front-end Engineer Assignment: Guest Picker
 
 You can find the instructions [here](INSTRUCTIONS.md)
 
